@@ -1,26 +1,29 @@
 ﻿using DocRouter.Application.Common.Exceptions;
 using DocRouter.Application.Common.Interfaces;
 using DocRouter.Application.Common.Models;
-using DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail;
+using DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail;
 using DocRouter.Common;
-using DocRouter.Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DocRouter.Application.Submissions.Commands.ApproveTransaction
+namespace DocRouter.Application.Submissions.Commands.RejectTransaction
 {
     /// <summary>
-    /// Implementation of <see cref="IRequestHandler{TRequest, TResponse}"/> that handles a request to approve a submission transaction.
+    /// Implementation of <see cref="IRequestHandler{TRequest, TResponse}"/> that handles a request to reject a submission transaction..
     /// </summary>
-    public class ApproveTransactionCommandHandler : IRequestHandler<ApproveTransactionCommand, Result>
+    public class RejectTransactionCommandHandler : IRequestHandler<RejectTransactionCommand, Result>
     {
         private readonly IDocRouterContext _context;
         private readonly IDateTime _dateTime;
-        private readonly ILogger<ApproveTransactionCommandHandler> _logger;
+        private readonly ILogger<RejectTransactionCommandHandler> _logger;
         private readonly IMediator _mediator;
         private readonly ICurrentUserService _currentUserService;
+
 
         /// <summary>
         /// Creates a new instance of the handler.
@@ -29,10 +32,10 @@ namespace DocRouter.Application.Submissions.Commands.ApproveTransaction
         /// <param name="dateTime">An implementation of <see cref="IDateTime"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
         /// <param name="mediator">An implementation of <see cref="IMediator"/></param>
-        public ApproveTransactionCommandHandler(
+        public RejectTransactionCommandHandler(
             IDocRouterContext context,
             IDateTime dateTime,
-            ILogger<ApproveTransactionCommandHandler> logger,
+            ILogger<RejectTransactionCommandHandler> logger,
             IMediator mediator,
             ICurrentUserService currentUserService
             )
@@ -44,16 +47,10 @@ namespace DocRouter.Application.Submissions.Commands.ApproveTransaction
             _currentUserService = currentUserService;
         }
 
-        /// <summary>
-        /// Handles the request.
-        /// </summary>
-        /// <param name="command">A <see cref="ApproveTransactionCommand"/> object.</param>
-        /// <param name="cancellationToken">A <see cref="CancellationToken"/></param>
-        /// <returns>A <see cref="Result"/></returns>
-        public async Task<Result> Handle(ApproveTransactionCommand command, CancellationToken cancellationToken)
+        public async Task<Result> Handle(RejectTransactionCommand command, CancellationToken cancellationToken)
         {
             var submission = await _context.Submissions.FindAsync(command.SubmissionId);
-            if( submission == null )
+            if (submission == null)
             {
                 throw new NotFoundException($"No submission found with id: {command.SubmissionId}", command.SubmissionId);
             }
@@ -62,19 +59,6 @@ namespace DocRouter.Application.Submissions.Commands.ApproveTransaction
             {
                 throw new NotFoundException($"No transaction found with id {command.TransactionId}", command.TransactionId);
             }
-            transactionToEdit.UpdateTransactionStatus(DocRouter.Common.Enums.TransactionStatus.Approved);
-            transactionToEdit.UpdateTransactionDate(_dateTime.Now, _dateTime.Now);
-            submission.AddTransaction(new SubmissionTransaction(_dateTime.Now, _dateTime.Now, DocRouter.Common.Enums.TransactionStatus.Pending, command.Recepient, command.NewComments));
-            await _context.SaveChangesAsync(cancellationToken);
-            await _mediator.Publish(new TransactionApproved
-            {
-                SubmissionId = submission.Id,
-                SubmissionUri = submission.FolderUri,
-                SubmissionTitle = submission.Title,
-                SubmittedBy = _currentUserService.UserId,
-                SubmittedTo = command.Recepient
-            });
-            return Result.Success();
         }
     }
 }
