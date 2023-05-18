@@ -1,0 +1,121 @@
+﻿@using DocRouter.Application.Submissions
+@using DocRouter.Domain.Entities;
+@model SubmissionDto
+@{
+    ViewData["Title"] = "Submission Details";
+    bool canEdit = (Model.CreatedBy == User.Identity.Name && Model.CurrentlyRoutedTo == User.Identity.Name) ? true : false;
+    bool canReview = Model.CurrentlyRoutedTo == User.Identity.Name ? true : false;
+}
+@section Head{
+    <link rel="stylesheet" href="~/css/timeline.css" />
+}
+<div>
+    <h2>Submission Details</h2>
+    <a href="@ViewBag.ReturnUrl"><i class="fa fa-chevron-left"></i> Back</a>
+    @if (canEdit)
+    {
+        <span> | </span><a asp-action="Edit" asp-route-id="@Model.Id" asp-route-returnUrl="@ViewBag.ReturnUrl"><i class="fa fa-pencil"></i> Edit</a>
+        <span> | </span><a asp-action="Delete" asp-route-id="@Model.Id" asp-route-returnUrl="@ViewBag.ReturnUrl"><i class="fa fa-trash"></i> Delete</a>
+    }    
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Submission Title</label><br />
+            <a href="@Model.FolderPath" target="_blank"><strong>@Model.Title</strong></a>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Created By</label><br />
+            <strong>@Model.CurrentlyRoutedTo</strong>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Date</label><br />
+            <strong>@Model.DateCreated.ToShortDateString()</strong>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Current Status</label><br />
+            <strong>@Model.CurrentStatus</strong>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Currently Routed To</label><br />
+            <strong>@Model.CurrentlyRoutedTo</strong>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-12 mb-2">
+            <label>Files</label><br />
+            <ul>
+                @foreach(SubmissionItem item in Model.Items)
+                {
+                    <li>
+                        <a href="@item.ItemUri"  target="_blank"><i class="fa fa-file-text-o"></i> @item.ItemName</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <hr />
+    @if (canReview)
+    {
+        <div class="card  text-center mb-3">
+            <h5 class="card-header text-white bg-primary">Review</h5>
+            <div class="card-body">
+                <h5 class="card-title">This submission is currently routed to you. Please choose an option:</h5>
+                <a asp-action="Approve" asp-controller="Submission" asp-route-TransactionId="@Model.Transactions.OrderByDescending(x => x.Created).First().Id" asp-route-returnUrl="/Submission/Details/@Model.Id@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" class="btn btn-primary">Approve</a>
+                <a href="#" class="btn btn-danger">Reject</a>
+                <a href="#" class="btn btn-success">Complete</a>
+            </div>
+        </div>
+    }
+    <div>
+        <h5>Submission History</h5>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div id="tracking-pre"></div>
+                <div id="tracking">
+                    <div class="text-center tracking-status-@Model.CurrentStatus">
+                        <p class="tracking-status text-tight">Current Status: @Model.CurrentStatus</p>
+                    </div>
+                    <div class="tracking-list">
+                        @foreach(SubmissionTransactionDto item in Model.Transactions.OrderByDescending(x => x.Created)){
+                            <div class="tracking-item">
+                                <div class="tracking-icon status-@item.Status">
+                                    @switch (item.Status)
+                                    {
+                                        case DocRouter.Common.Enums.TransactionStatus.Pending:
+                                            <i class="fa fa-question-circle fa-4x" aria-hidden="true"></i>
+                                            break;
+                                        case DocRouter.Common.Enums.TransactionStatus.Approved:
+                                            <i class="fa fa-thumbs-up fa-4x" aria-hidden="true"></i>
+                                            break;
+                                        case DocRouter.Common.Enums.TransactionStatus.Rejected:
+                                            <i class="fa fa-thumbs-down fa-4x" aria-hidden="true"></i>
+                                            break;
+                                        case DocRouter.Common.Enums.TransactionStatus.Complete:
+                                            <i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>
+                                            break;
+                                    }                                    
+                                </div>
+                                <div class="tracking-date">@item.Created.ToString("MMM d, yyyy")<span>@item.Created.ToString("H:mm tt")</span></div>
+                                <div class="tracking-content">
+                                    <span>@item.Comments</span>
+                                    <span>Submitted by @item.RoutedFrom to @item.RoutedTo</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="tracking-list">
+                        <div class="tracking-item">
+                            <div class="tracking-icon status-Created">
+                                <i class="fa fa-plus-circle fa-4x"></i>
+                            </div>
+                            <div class="tracking-date">@Model.DateCreated.ToString("MMM d, yyyy")<span>@Model.DateCreated.ToString("H:mm tt")</span></div>
+                            <div class="tracking-content">Submission Created<span>Submitted by @Model.CreatedBy</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

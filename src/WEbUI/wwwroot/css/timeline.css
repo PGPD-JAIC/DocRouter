@@ -1,0 +1,146 @@
+﻿:root {
+    --pending: #f5a551;
+    --approved: #65aee0;
+    --complete: #28a745;
+    --rejected: #d26759;
+}
+
+.tracking-detail {
+    padding: 3rem 0
+}
+
+#tracking {
+    margin-bottom: 1rem
+}
+
+[class*=tracking-status-] p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center
+}
+
+[class*=tracking-status-] {
+    padding: 1.6rem 0
+}
+
+.tracking-status-Approved {
+    background-color: var(--approved);
+}
+
+.tracking-status-Pending {
+    background-color: var(--pending);
+}
+
+.tracking-status-Complete {
+    background-color: var(--complete);
+}
+
+.tracking-status-Rejected {
+    background-color: var(--rejected);
+}
+
+.tracking-list {
+    border: 1px solid #e5e5e5
+}
+
+.tracking-item {
+    border-left: 1px solid #e5e5e5;
+    position: relative;
+    padding: 2rem 1.5rem .5rem 2.5rem;
+    font-size: .9rem;
+    margin-left: 3rem;
+    min-height: 5rem
+}
+
+    .tracking-item:last-child {
+        padding-bottom: 2rem
+    }
+
+    .tracking-item .tracking-date {
+        margin-bottom: .5rem
+    }
+
+        .tracking-item .tracking-date span {
+            color: #888;
+            font-size: 85%;
+            padding-left: .4rem
+        }
+
+    .tracking-item .tracking-content {
+        padding: .5rem .8rem;
+        background-color: #f4f4f4;
+        border-radius: .5rem
+    }
+
+        .tracking-item .tracking-content span {
+            display: block;
+            color: #888;
+            font-size: 85%
+        }
+
+    .tracking-item .tracking-icon {
+        line-height: 2.6rem;
+        position: absolute;
+        left: -1.3rem;
+        width: 2.6rem;
+        height: 2.6rem;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 1.1rem;
+        background-color: #fff;
+        color: #fff
+    }
+
+        .tracking-item .tracking-icon.status-Pending {
+            color: var(--pending);
+            border: 1px solid var(--pending);
+            font-size: .6rem
+        }
+
+        .tracking-item .tracking-icon.status-Created {
+            color: #e5e5e5;
+            border: 1px solid #e5e5e5;
+            font-size: .6rem
+        }
+
+        .tracking-item .tracking-icon.status-Approved {
+            color: var(--approved);
+            border: 1px solid var(--approved);
+            font-size: .6rem
+        }
+
+        .tracking-item .tracking-icon.status-Complete {
+            color: var(--complete);
+            border: 1px solid var(--complete);
+            font-size: .6rem
+        }
+        .tracking-item .tracking-icon.status-Rejected {
+            color: var(--rejected);
+            border: 1px solid var(--rejected);
+            font-size: .6rem
+        }
+
+@media(min-width:992px) {
+    .tracking-item {
+        margin-left: 10rem
+    }
+
+        .tracking-item .tracking-date {
+            position: absolute;
+            left: -10rem;
+            width: 7.5rem;
+            text-align: right
+        }
+
+            .tracking-item .tracking-date span {
+                display: block
+            }
+
+        .tracking-item .tracking-content {
+            padding: 0;
+            background-color: transparent;
+            overflow: hidden;
+        }
+}

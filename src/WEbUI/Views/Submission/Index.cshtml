@@ -1,0 +1,212 @@
+﻿@using DocRouter.Application.Submissions.Queries.GetAllSubmissions
+@model SubmissionListVm
+<div>
+    <form asp-page="/CaseList" method="get" class="floatingForm">
+        <h2>Submissions List</h2>
+        <hr />
+        <div class="form-row align-items-top mb-2">
+            <div class="col-md-4">
+                <select asp-for="SubmittedBySearch" class="form-control" asp-items="@(Model.SubmittingUsers.Select(x => new SelectListItem {Value = x, Text = x }).ToList())">
+                    <option value="">Select User</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select asp-for="RoutedToSearch" class="form-control" asp-items="@(Model.RoutedToUsers.Select(x => new SelectListItem {Value = x, Text = x }).ToList())">
+                    <option value="">Select User</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input type="text" name="StartDate" class="form-control" value="@Model.StartDate" placeholder="Start Date" />
+            </div>
+            <div class="col-md-2">
+                <input type="text" name="EndDate" class="form-control" value="@Model.StartDate" placeholder="End Date" />
+            </div>
+        </div>
+        <div class="form-row align-items-center mb-2">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary" id="filterSubmit"><i class="fa fa-search"></i> Search</button>
+                @if(!string.IsNullOrEmpty(Model.RoutedToSearch) || !string.IsNullOrEmpty(Model.SubmittedBySearch) || Model.StartDate != null || Model.EndDate != null)
+                {
+                    <button type="reset" class="btn btn-success" asp-action="Index" asp-controller="Index"><i class="fa fa-refresh"></i> Reset</button>
+                }
+            </div>
+        </div>
+    </form>
+    @if (Model.Submissions.Count > 0)
+    {
+        <div class="table-responsive-sm">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th colspan="8">
+                            <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+                             page-class="" page-class-normal=""
+                             page-class-selected="active"
+                             page-url-sortOrder="@Model.CurrentSort"
+                             page-url-SubmittedBySearch="@Model.SubmittedBySearch"
+                             page-url-RoutedToSearch="@Model.RoutedToSearch"
+                             page-url-startDate="@Model.StartDate"
+                             page-url-endDate="@Model.EndDate"
+                             class="btn-group">
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="8">
+                            <small>@Model.PagingInfo.Caption</small>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a asp-page="/Index"
+                           asp-route-sortOrder="@Model.TitleSort"
+                           asp-route-SubmittedBySearch="@Model.SubmittedBySearch"
+                           asp-route-RoutedToSearch="@Model.RoutedToSearch"
+                           asp-route-StartDate=@Model.StartDate
+                           asp-route-EndDate=@Model.EndDate
+                           title="Sort by Title">
+                                Title
+                                @if (Model.CurrentSort == "title")
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                                }
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-page="/Index"
+                           asp-route-sortOrder="@Model.DateSort"
+                           asp-route-SubmittedBySearch="@Model.SubmittedBySearch"
+                           asp-route-RoutedToSearch="@Model.RoutedToSearch"
+                           asp-route-StartDate=@Model.StartDate
+                           asp-route-EndDate=@Model.EndDate
+                           title="Sort by Date">
+                                Date
+                                @if (Model.CurrentSort == "date_asc")
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                                }
+                            </a>
+                        </th>
+                        <th>
+                            Folder
+                        </th>
+                        <th>
+                            # of Files
+                        </th>
+                        <th>
+                            <a asp-page="/Index"
+                           asp-route-sortOrder="@Model.SubmittedBySort"
+                           asp-route-SubmittedBySearch="@Model.SubmittedBySearch"
+                           asp-route-RoutedToSearch="@Model.RoutedToSearch"
+                           asp-route-StartDate=@Model.StartDate
+                           asp-route-EndDate=@Model.EndDate
+                           title="Sort by Submitted By">
+                                Submitted By
+                                @if (Model.CurrentSort == "submittedBy_desc")
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                                }
+                            </a>
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            <a asp-page="/Index"
+                           asp-route-sortOrder="@Model.RoutedToSort"
+                           asp-route-SubmittedBySearch="@Model.SubmittedBySearch"
+                           asp-route-RoutedToSearch="@Model.RoutedToSearch"
+                           asp-route-StartDate=@Model.StartDate
+                           asp-route-EndDate=@Model.EndDate
+                           title="Sort by Routed To">
+                                Routed To
+                                @if (Model.CurrentSort == "reoutedTo_desc")
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                                }
+                            </a>
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SubmissionListSubmissionDto submission in Model.Submissions)
+                    {
+                        <tr>
+                            <td>
+                                @submission.Title
+                            </td>
+                            <td>
+                                @submission.DateCreated.ToShortDateString()
+                            </td>
+                            <td>
+                                <a href="@submission.FolderPath" target="_blank">Open Folder</a>
+                            </td>
+                            <td>
+                                @submission.Files
+                            </td>
+                            <td>
+                                @submission.SubmittedBy
+                            </td>
+                            <td>
+                                @submission.CurrentStatus
+                            </td>
+                            <td>
+                                @submission.CurrentlyRoutedTo
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@submission.Id" asp-route-returnUrl="/Submission/Index@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" title="View Details">
+                                    <i class="fa fa-info" aria-hidden="true"></i> Details
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+    }
+    else
+    {
+        <div class="text-center">
+            <h5>No Submissions Found</h5>
+        </div>
+    }
+
+</div>
+@section Head{
+    <link rel="stylesheet" href="~/lib/select2/css/select2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+}
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#SubmittedBySearch").select2({
+                width: '100%'
+            });
+            $("#RoutedToSearch").select2({
+                width: '100%'
+            });
+        });
+    </script>
+}

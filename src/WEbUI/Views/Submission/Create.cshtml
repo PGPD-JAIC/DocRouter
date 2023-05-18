@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Create Submission";
+}
+@model SubmissionViewModel
+<h4>DocRouter File Uploader</h4>
+<hr />
+<form method="post" enctype="multipart/form-data" asp-controller="Submission" asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="SubmissonName">Folder Name</label>
+            <input asp-for="SubmissonName" class="form-control" />
+            <span asp-validation-for="SubmissonName" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Recipient">Submit to:</label>
+            <select asp-for="Recipient" asp-items="Model.Users" class="form-control">
+                <option value="">Select User</option>
+            </select>
+            <span asp-validation-for="Recipient" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Comments">Comments:</label>
+        <textarea asp-for="Comments" rows="5" cols="40" class="form-control"></textarea>
+        <span asp-validation-for="Comments" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Files" class="btn btn-primary">
+            <i class="fa fa-cloud-upload"></i> Select File(s)
+        </label>
+        <input asp-for="Files" type="file" multiple style="display: none;">
+        <div id="submissions">
+        </div>
+        <span asp-validation-for="Files" class="text-danger"></span>
+    </div>
+    <hr />
+    <div class="form-group" id="submitGroup">
+        <button type="submit" id="submitButton" class="btn btn-success" value="Upload"><i class="fa fa-floppy-o" aria-hidden="true"></i> Create Submission</button>
+    </div>
+    <div class="form-group text-success" id="spinner" style="display:none">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="vertical-align:middle"></i><strong> Uploading, please wait...</strong>
+    </div>
+</form>
+@section Head {
+    <link rel="stylesheet" href="~/lib/select2/css/select2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+}
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Files").on('change', function (event) {
+                //do whatever you want
+                var fileList = Array.prototype.slice.call(event.target.files);
+                var filePaths = fileList.map(function (file) { return file.name; });
+                var onlyNames = filePaths.map(function (file) { return file.split('/').pop().split('\\').pop(); });
+                $("#submissions").append("<div class='card -p3'><div class='card-body' id='submissionCard'></div></div>");
+                for (var i = 0; i < fileList.length; i++) {
+                    $("#submissionCard").append("<div class='input-group mb-3'><div class='input-group-prepend'><span class='input-group-text' id='basic-addon1'><i class='fa fa-file'></i></span></div><input type='text' class='form-control' placeholder='" + fileList[i].name + "' disabled></div>")
+                }
+                $("#submissionCard").append("<span class='btn btn-danger' id='clearFileButton'><i class='fa fa-trash'></i> Clear Files</span>");
+                $("#clearFileButton").on("click", function () {
+                    $("#Files").val("");
+                    $("#submissions").empty();
+                })
+            });
+            $("#Recipient").select2({
+                width: '100%'
+            });
+            $("#submitButton").on("click", function(){
+                $("#submitGroup").hide();
+                $("#spinner").show();
+            })
+        })
+    </script>
+
+}
+
