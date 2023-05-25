@@ -80,5 +80,14 @@ namespace DocRouter.Infrastructure
                 throw e;
             }
         }
+        public async Task DeleteDirectoryAsync(string path)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteFileAsync(string fileId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

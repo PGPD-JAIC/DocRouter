@@ -19,5 +19,14 @@ namespace DocRouter.Application.UnitTests.Common
             Guid newGUID = Guid.NewGuid();
             return Task.Run(() => (new DirectoryResult { Uri = Path.Combine(_rootPath, newGUID.ToString()) }));
         }
+        public Task DeleteDirectoryAsync(string directoryId)
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task DeleteFileAsync(string fileId)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

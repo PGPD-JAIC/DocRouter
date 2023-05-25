@@ -17,7 +17,11 @@ namespace DocRouter.WebUI.Models
         /// <summary>
         /// The Name to assign to the submission.
         /// </summary>
-        public string SubmissonName { get; set; }
+        public string Title { get; set; }
+        /// <summary>
+        /// The Description of the submission.
+        /// </summary>
+        public string Description { get; set; }
         /// <summary>
         /// A string containing comments about the submission.
         /// </summary>
@@ -32,7 +36,8 @@ namespace DocRouter.WebUI.Models
          return new CreateSubmissionCommand
             {
                 Recipient = Recipient,
-                SubmissonName = SubmissonName,
+                Title = Title,
+                Description = Description,
                 Comments = Comments,
                 Files = Files.Select(f =>
                     new FileSubmissionDto

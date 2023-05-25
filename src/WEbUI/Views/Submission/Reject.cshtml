@@ -1,0 +1,77 @@
+﻿@using DocRouter.Application.Common.Models;
+@using DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail
+@model RejectTransactionCommand
+<div>
+    <h2>Reject Submission</h2>
+    <a href="@ViewBag.ReturnUrl"><i class="fa fa-chevron-left"></i> Back</a>
+    <hr />
+    <form method="post" asp-controller="Submission" asp-action="Reject" asp-route-returnUrl="@ViewBag.ReturnUrl">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="SubmissionId" type="hidden" />
+        <input asp-for="TransactionId" type="hidden" />
+        <input asp-for="Title" type="hidden" />
+        <input asp-for="Description" type="hidden" />
+        <input asp-for="RoutedTo" type="hidden" />
+        <input asp-for="ExistingComments" type="hidden" />
+        <input asp-for="DateCreated" type="hidden" />
+        <input asp-for="CreatedBy" type="hidden" />
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Submission Title</label>
+                <input class="form-control" type="text" placeholder="@Model.Title" readonly />
+            </div>
+            <div class="form-group col-md-4">
+                <label>Created By</label><br />
+                <input class="form-control" type="text" placeholder="@Model.CreatedBy" readonly />
+            </div>
+            <div class="form-group col-md-2">
+                <label>Date</label><br />
+                <input class="form-control" type="text" placeholder="@Model.DateCreated.ToShortDateString()" readonly />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="Description">Description</label><br />
+                <textarea class="form-control" readonly>@Model.Description</textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Current Status</label><br />
+                <input class="form-control" type="text" placeholder="@Model.CurrentStatus" readonly />
+            </div>
+            <div class="form-group col-md-6">
+                <label>Currently Routed To</label><br />
+                <input class="form-control" type="text" placeholder="@Model.RoutedTo" readonly />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="Description">Current Comments</label><br />
+                <textarea class="form-control" readonly>@Model.ExistingComments</textarea>
+            </div>
+        </div>
+        <hr />
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Recepient">Send To</label>
+                <select asp-for="Recepient" class="form-control" asp-items="@(new SelectList((List<DirectoryUser>)ViewBag.Users, "Email", "Name"))">
+                    <option value="">Select User</option>
+                </select>
+                <span asp-validation-for="Recepient" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="NewComments">Comments</label>
+                <textarea asp-for="NewComments" rows="5" cols="40" class="form-control"></textarea>
+                <span asp-validation-for="NewComments" class="text-danger"></span>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group" id="submitGroup">
+            <button type="submit" id="submitButton" class="btn btn-success" value="Upload"><i class="fa fa-floppy-o" aria-hidden="true"></i> Submit Rejection</button>
+            <a href="@ViewBag.ReturnUrl" class="btn btn-danger">Cancel</a>
+        </div>
+    </form>
+</div>

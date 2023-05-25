@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace DocRouter.Infrastructure.Azure
 {
+    // TODO: Move Drive IDs to AzureADSettings?
     public class AzureADFileStorageService : IFileStorageService
     {
         private GraphServiceClient graphClient;
@@ -56,7 +57,8 @@ namespace DocRouter.Infrastructure.Azure
                 var uploadResult = await fileUploadTask.UploadAsync(progress);
                 var result = new FileResult
                 {
-                    Uri = uploadResult.ItemResponse.WebUrl
+                    Uri = uploadResult.ItemResponse.WebUrl,
+                    Id  = uploadResult.ItemResponse.Id
                 };
                 _logger.LogInformation(uploadResult.UploadSucceeded ?
                     $"Upload complete, item ID: {uploadResult.ItemResponse.Id}" :
@@ -119,6 +121,24 @@ namespace DocRouter.Infrastructure.Azure
                 _logger.LogError($"AzureADFileStorageService exception: {e.Message}");
                 throw e;
             }
+        }
+        public async Task DeleteDirectoryAsync(string directoryId)
+        {
+            _logger.LogInformation($"FileStorageService.DeleteDirectoryAsync invoked with Id: {directoryId}");
+            try
+            {
+                await graphClient.Drives["b!j3sReZftLkuOgOZFHws5jx8M56sz-i9IkpjRrPkNncnrKJubNalgR6RgYT57FY72"].Items[directoryId].DeleteAsync();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"AzureADFileStorageService exception: {e.Message}");
+                throw e;
+            }
+        }
+
+        public Task DeleteFileAsync(string fileId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

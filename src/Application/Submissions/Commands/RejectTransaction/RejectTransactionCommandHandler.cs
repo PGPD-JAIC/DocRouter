@@ -3,11 +3,9 @@ using DocRouter.Application.Common.Interfaces;
 using DocRouter.Application.Common.Models;
 using DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail;
 using DocRouter.Common;
+using DocRouter.Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -46,7 +44,13 @@ namespace DocRouter.Application.Submissions.Commands.RejectTransaction
             _mediator = mediator;
             _currentUserService = currentUserService;
         }
-
+        /// <summary>
+        /// Handles the request.
+        /// </summary>
+        /// <param name="command">A <see cref="RejectTransactionCommand"/> object.</param>
+        /// <param name="cancellationToken">A <see cref="CancellationToken"/></param>
+        /// <returns></returns>
+        /// <exception cref="NotFoundException">Thrown when the provided Submission or Transaction Id can't be found.</exception>
         public async Task<Result> Handle(RejectTransactionCommand command, CancellationToken cancellationToken)
         {
             var submission = await _context.Submissions.FindAsync(command.SubmissionId);
@@ -59,6 +63,18 @@ namespace DocRouter.Application.Submissions.Commands.RejectTransaction
             {
                 throw new NotFoundException($"No transaction found with id {command.TransactionId}", command.TransactionId);
             }
+            transactionToEdit.UpdateTransactionStatus(DocRouter.Common.Enums.TransactionStatus.Rejected);
+            submission.AddTransaction(new SubmissionTransaction(_dateTime.Now, _dateTime.Now, DocRouter.Common.Enums.TransactionStatus.Pending, transactionToEdit.RoutedTo, command.NewComments));
+            await _context.SaveChangesAsync(cancellationToken);
+            await _mediator.Publish(new TransactionRejected
+            {
+                SubmissionId = submission.Id,
+                SubmissionUri = submission.FolderUri,
+                SubmissionTitle = submission.Title,
+                SubmittedBy = transactionToEdit.CreatedBy,
+                RejectedBy = transactionToEdit.RoutedTo
+            });
+            return Result.Success();
         }
     }
 }

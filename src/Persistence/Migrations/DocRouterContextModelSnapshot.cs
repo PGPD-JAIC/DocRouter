@@ -34,6 +34,11 @@ namespace DocRouter.Persistence.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
+
                     b.Property<DateTime?>("Edited")
                         .HasColumnType("datetime2");
 
@@ -49,6 +54,10 @@ namespace DocRouter.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
+
+                    b.Property<string>("UniqueId")
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
 
                     b.HasKey("Id");
 
@@ -88,6 +97,11 @@ namespace DocRouter.Persistence.Migrations
 
                     b.Property<int>("SubmissionId")
                         .HasColumnType("int");
+
+                    b.Property<string>("UniqueId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
 
                     b.HasKey("Id");
 
@@ -155,7 +169,7 @@ namespace DocRouter.Persistence.Migrations
 
             modelBuilder.Entity("DocRouter.Domain.Entities.SubmissionTransaction", b =>
                 {
-                    b.HasOne("DocRouter.Domain.Entities.Submission", null)
+                    b.HasOne("DocRouter.Domain.Entities.Submission", "Submission")
                         .WithMany("Transactions")
                         .HasForeignKey("SubmissionId")
                         .OnDelete(DeleteBehavior.Cascade)

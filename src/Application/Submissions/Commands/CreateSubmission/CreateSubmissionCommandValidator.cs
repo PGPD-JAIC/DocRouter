@@ -9,11 +9,16 @@ namespace DocRouter.Application.Submissions.Commands.CreateSubmission
     {
         public CreateSubmissionCommandValidator()
         {
-            RuleFor(x => x.SubmissonName)
+            RuleFor(x => x.Title)
                 .NotEmpty()
                     .WithMessage("A title or name is required.")
                 .MaximumLength(100)
                     .WithMessage("Maximum length of 100 characters.");
+            RuleFor(x => x.Description)
+                .NotEmpty()
+                    .WithMessage("A description is required.")
+                .MaximumLength(1000)
+                    .WithMessage("Maximum length of 1000 characters.");
             RuleFor(x => x.Files)
                 .NotEmpty()
                 .WithMessage("A submission requires at least 1 file.");

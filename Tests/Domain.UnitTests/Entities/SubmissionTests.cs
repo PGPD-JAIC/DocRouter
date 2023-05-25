@@ -16,9 +16,10 @@ namespace DocRouter.Domain.UnitTests.Entities
             // Arrange
             string title = "Test Title";
             string folderPath = @"C:\DocRouter\Testing";
+            string description = "This is a test description.";
 
             // Act
-            var toTest = new Submission(title, folderPath);
+            var toTest = new Submission(title, folderPath, description);
 
             // Assert
             toTest.Title.ShouldBe(title);
@@ -34,9 +35,10 @@ namespace DocRouter.Domain.UnitTests.Entities
             // Arrange
             string title = value;
             string folderPath = @"C:\DocRouter\Testing";
+            string description = "This is a test description.";
 
             // Act/Assert
-            Assert.Throws<SubmissionArgumentException>(() => new Submission(title, folderPath));
+            Assert.Throws<SubmissionArgumentException>(() => new Submission(title, folderPath, description));
         }
         [Theory]
         [InlineData("")]
@@ -51,15 +53,16 @@ namespace DocRouter.Domain.UnitTests.Entities
             // Arrange
             string title = "Test Title";
             string folderPath = value;
+            string description = "This is a test description.";
 
             // Act/Assert
-            Assert.Throws<SubmissionArgumentException>(() => new Submission(title, folderPath));
+            Assert.Throws<SubmissionArgumentException>(() => new Submission(title, folderPath, description));
         }
         [Fact]
         public void Can_Add_Item()
         {
             // Arrange
-            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing");
+            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing", "Test Description.");
             var item = new SubmissionItem("Test Item", @"C:\DocRouter\Testing\Test Item.pdf");
 
             // Act
@@ -72,7 +75,7 @@ namespace DocRouter.Domain.UnitTests.Entities
         public void Can_Remove_Item()
         {
             // Arrange
-            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing");
+            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing", "Test Description.");
             var item = new SubmissionItem("Test Item", @"C:\DocRouter\Testing\Test Item.pdf");
             toTest.AddItem(item);
             var itemCount = toTest.Items.Count;
@@ -88,7 +91,7 @@ namespace DocRouter.Domain.UnitTests.Entities
         public void Can_Add_Transaction()
         {
             // Arrange
-            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing");
+            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing", "Test Description.");
             var transaction = new SubmissionTransaction(
                 new DateTime(2023, 1, 1), 
                 new DateTime(2023, 1, 1), 
@@ -106,7 +109,7 @@ namespace DocRouter.Domain.UnitTests.Entities
         public void Can_Remove_Transaction()
         {
             // Arrange
-            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing");
+            var toTest = new Submission("Test Title", @"C:\DocRouter\Testing", "Test Description.");
             var transaction = new SubmissionTransaction(
                 new DateTime(2023, 1, 1),
                 new DateTime(2023, 1, 1), 

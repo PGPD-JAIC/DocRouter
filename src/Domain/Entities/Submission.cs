@@ -13,16 +13,41 @@ namespace DocRouter.Domain.Entities
         /// </summary>
         private Submission() { }
         /// <summary>
-        /// Creates a new instance of the class.
+        /// 
         /// </summary>
         /// <param name="title">A string containing the title of the submission.</param>
+        /// <param name="description">A string containing the description of the submission.</param>
+        /// <param name="folderUri"></param>
         public Submission(
             string title,
+            string description,
             string folderUri
             )
         {
             UpdateTitle(title);
+            UpdateDescription(description);
             UpdateFolderUri(folderUri);
+            _items = new List<SubmissionItem>();
+            _transactions = new List<SubmissionTransaction>();
+        }
+        /// <summary>
+        /// Creates a new instance of the class.
+        /// </summary>
+        /// <param name="title">A string containing the title of the submission.</param>
+        /// <param name="description">A string containing the description of the submission.</param>
+        /// <param name="folderUri"></param>
+        /// <param name="id"></param>
+        public Submission(
+            string title,
+            string description,
+            string folderUri,
+            string id
+            )
+        {
+            UpdateTitle(title);
+            UpdateDescription(description);
+            UpdateFolderUri(folderUri);
+            UpdateUniqueId(id);
             _items = new List<SubmissionItem>();
             _transactions = new List<SubmissionTransaction>();
         }
@@ -31,11 +56,21 @@ namespace DocRouter.Domain.Entities
         /// The title of the submission.
         /// </summary>
         public string Title => _title;
+        private string _description;
+        /// <summary>
+        /// The Description of the Submission.
+        /// </summary>
+        public string Description => _description;
         private string _folderUri;
         /// <summary>
         /// The path to the submission folder.
         /// </summary>
         public string FolderUri => _folderUri;
+        private string _uniqueId;
+        /// <summary>
+        /// The unique identifier of the folder item.
+        /// </summary>
+        public string UniqueId => _uniqueId;
         private List<SubmissionItem> _items;
         /// <summary>
         /// A readonly list of <see cref="SubmissionItem"/> objects associated with the Case.
@@ -62,6 +97,36 @@ namespace DocRouter.Domain.Entities
                 throw new SubmissionArgumentException("Parameter must be 100 characters or fewer.", nameof(newTitle));
             }
             _title = newTitle;
+        }
+        /// <summary>
+        /// Updates the Description of the submission.
+        /// </summary>
+        /// <param name="newDescription">A string containing the new Description.</param>
+        /// <exception cref="SubmissionArgumentException">Thrown when the provided parameter is empty, whitespace, or longer than 100 characters.</exception>
+        public void UpdateDescription(string newDescription)
+        {
+            if (string.IsNullOrWhiteSpace(newDescription))
+            {
+                throw new SubmissionArgumentException("Parameter cannot be empty or whitespace.", nameof(newDescription));
+            }
+            else if (newDescription.Length > 1000)
+            {
+                throw new SubmissionArgumentException("Parameter must be 1000 characters or fewer.", nameof(newDescription));
+            }
+            _description = newDescription;
+        }
+        /// <summary>
+        /// Updates the submission's unique Id.
+        /// </summary>
+        /// <param name="newId">A string containing the new Id.</param>
+        /// <exception cref="SubmissionArgumentException">Thrown when the provided Id is empty or whitespace.</exception>
+        public void UpdateUniqueId(string newId)
+        {
+            if (string.IsNullOrWhiteSpace(newId))
+            {
+                throw new SubmissionArgumentException("Parameter cannot be empty or whitespace.", nameof(newId));
+            }
+            _uniqueId = newId;
         }
         /// <summary>
         /// Updates the Submission's folder Uri.

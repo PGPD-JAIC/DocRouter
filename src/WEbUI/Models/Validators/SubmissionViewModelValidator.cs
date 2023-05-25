@@ -6,11 +6,11 @@ namespace DocRouter.WebUI.Models.Validators
     {
         public SubmissionViewModelValidator()
         {
-            RuleFor(x => x.SubmissonName)
-    .NotEmpty()
-        .WithMessage("A title or name is required.")
-    .MaximumLength(100)
-        .WithMessage("Maximum length of 100 characters.");
+            RuleFor(x => x.Title)
+            .NotEmpty()
+                .WithMessage("A title or name is required.")
+            .MaximumLength(100)
+                .WithMessage("Maximum length of 100 characters.");
             RuleFor(x => x.Files)
                 .NotEmpty()
                 .WithMessage("A submission requires at least 1 file.");

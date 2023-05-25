@@ -20,10 +20,23 @@ namespace DocRouter.Application.Common.Interfaces
         /// <param name="file">A <see cref="FileSubmissionDto"/> containing file details.</param>
         /// <returns>A string containing the full path to the added file.</returns>
         Task<FileResult> AddFileToDirectoryAsync(string directoryName, FileSubmissionDto file);
+        /// <summary>
+        /// Deletes a directory.
+        /// </summary>
+        /// <param name="directoryId"></param>
+        /// <returns></returns>
+        Task DeleteDirectoryAsync(string directoryId);
+        /// <summary>
+        /// Deletes a file.
+        /// </summary>
+        /// <param name="fileId"></param>
+        /// <returns></returns>
+        Task DeleteFileAsync(string fileId);
     }
     public class FileResult
     {
         public string Uri { get; set; }
+        public string Id { get; set; }
     }
     public class DirectoryResult
     {

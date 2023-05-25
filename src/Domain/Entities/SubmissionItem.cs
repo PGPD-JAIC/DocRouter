@@ -15,16 +15,35 @@ namespace DocRouter.Domain.Entities
         /// <summary>
         /// Creates a new instance of the class.
         /// </summary>
+        /// <param name="itemName">The name of the item.</param>
+        /// <param name="itemUri">The path of the item.</param>
         public SubmissionItem(string itemName, string itemUri)
         {
             UpdateItemName(itemName);
             UpdateItemUri(itemUri);
+        }
+        /// <summary>
+        /// Creates a new instance of the class.
+        /// </summary>
+        /// <param name="itemName">The name of the item.</param>
+        /// <param name="itemUri">The path of the item.</param>
+        /// <param name="itemId">The id of the item.</param>
+        public SubmissionItem(string itemName, string itemUri, string itemId)
+        {
+            UpdateItemName(itemName);
+            UpdateItemUri(itemUri);
+            UpdateUniqueId(itemId);
         }
         private string _itemName;
         /// <summary>
         /// The name of the item.
         /// </summary>
         public string ItemName => _itemName;
+        private string _uniqueId;
+        /// <summary>
+        /// The unique Identifier for the item.
+        /// </summary>
+        public string UniqueId => _uniqueId;
         private string _itemUri;
         /// <summary>
         /// The path to the item.
@@ -48,6 +67,23 @@ namespace DocRouter.Domain.Entities
                 throw new SubmissionItemArgumentException("Parameter cannot be more than 100 characters.", nameof(newName));
             }
             _itemName = newName;
+        }
+        /// <summary>
+        /// Updates the unique identifier of the item.
+        /// </summary>
+        /// <param name="newId">A string containing the unique Id</param>
+        /// <exception cref="SubmissionItemArgumentException">Thrown when the provided parameter is null, whitespace, or more than 500 characters.</exception>
+        public void UpdateUniqueId(string newId)
+        {
+            if (string.IsNullOrWhiteSpace(newId))
+            {
+                throw new SubmissionItemArgumentException("Parameter cannot be null or whitespace.", nameof(newId));
+            }
+            else if (newId.Length > 500)
+            {
+                throw new SubmissionItemArgumentException("Parameter cannot be more than 100 characters.", nameof(newId));
+            }
+            _uniqueId = newId;
         }
         /// <summary>
         /// Updates the path to the item.

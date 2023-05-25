@@ -55,13 +55,12 @@ namespace DocRouter.Application.Submissions.Commands.CreateSubmission
             {
                 //TODO: Remove hard-coded value
                 DirectoryResult folder = await _fileStorageService.CreateDirectoryAsync(request.Recipient, "jcsmith1@co.pg.md.us");
-                var submission = new Submission(request.SubmissonName, folder.Uri);
+                var submission = new Submission(request.Title, request.Description, folder.Uri, folder.Id);
 
                 foreach (var file in request.Files)
                 {
                     FileResult fileResult = await _fileStorageService.AddFileToDirectoryAsync(folder.Id, file);
-                    var length = fileResult.Uri.Length;
-                    var submissionItem = new SubmissionItem(file.FileName, fileResult.Uri);
+                    var submissionItem = new SubmissionItem(file.FileName, fileResult.Uri, fileResult.Id);
                     submission.AddItem(submissionItem);
                 }
                 var transaction = new SubmissionTransaction(_dateTime.Now, _dateTime.Now, DocRouter.Common.Enums.TransactionStatus.Pending, request.Recipient, request.Comments);
@@ -78,10 +77,10 @@ namespace DocRouter.Application.Submissions.Commands.CreateSubmission
                     });
                 return new Result(true, submission.FolderUri, new List<string>());
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                _logger.LogError($"CreateSubmissionHandler error: {e.Message}");
-                return Result.Failure(new List<string>() { e.Message });
+                _logger.LogError($"CreateSubmissionHandler error: {ex.Message}");
+                return Result.Failure(new List<string>() { ex.Message });
             }
 
         }

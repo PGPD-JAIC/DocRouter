@@ -36,7 +36,7 @@ namespace DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail
         /// <summary>
         /// Handles the request.
         /// </summary>
-        /// <param name="request">A <see cref="GetTransactionDetailQuery"/> object.</param>
+        /// <param name="request">A <see cref="GetApproveTransactionDetailQuery"/> object.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/></param>
         /// <returns>A <see cref="ApproveTransactionCommand"/> object.</returns>
         public async Task<ApproveTransactionCommand> Handle(GetApproveTransactionDetailQuery request, CancellationToken cancellationToken)

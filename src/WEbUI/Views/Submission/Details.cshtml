@@ -3,8 +3,10 @@
 @model SubmissionDto
 @{
     ViewData["Title"] = "Submission Details";
-    bool canEdit = (Model.CreatedBy == User.Identity.Name && Model.CurrentlyRoutedTo == User.Identity.Name) ? true : false;
-    bool canReview = Model.CurrentlyRoutedTo == User.Identity.Name ? true : false;
+    bool canEdit = (Model.CreatedBy == User.Identity.Name && Model.RoutedTo == User.Identity.Name) ? true : false;
+    bool canReview = Model.RoutedTo == User.Identity.Name ? true : false;
+    bool canRecall = Model.RoutedFrom == User.Identity.Name ? true : false;
+
 }
 @section Head{
     <link rel="stylesheet" href="~/css/timeline.css" />
@@ -14,32 +16,38 @@
     <a href="@ViewBag.ReturnUrl"><i class="fa fa-chevron-left"></i> Back</a>
     @if (canEdit)
     {
-        <span> | </span><a asp-action="Edit" asp-route-id="@Model.Id" asp-route-returnUrl="@ViewBag.ReturnUrl"><i class="fa fa-pencil"></i> Edit</a>
-        <span> | </span><a asp-action="Delete" asp-route-id="@Model.Id" asp-route-returnUrl="@ViewBag.ReturnUrl"><i class="fa fa-trash"></i> Delete</a>
+        <span> | </span><a asp-action="Edit" asp-controller="Submission" asp-route-SubmissionId="@Model.Id" asp-route-returnUrl="@ViewBag.ReturnUrl"><i class="fa fa-pencil"></i> Edit</a>
+        <span> | </span><a asp-action="Delete" asp-controller="Submission" asp-route-SubmissionId="@Model.Id" asp-route-returnUrl="@ViewBag.ReturnUrl"><i class="fa fa-trash"></i> Delete</a>
     }    
     <hr />
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label>Submission Title</label><br />
-            <a href="@Model.FolderPath" target="_blank"><strong>@Model.Title</strong></a>
+            <label>Submission Title</label>
+            <input class="form-control" type="text" placeholder="@Model.Title" readonly />
         </div>
         <div class="form-group col-md-4">
             <label>Created By</label><br />
-            <strong>@Model.CurrentlyRoutedTo</strong>
+            <input class="form-control" type="text" placeholder="@Model.CreatedBy" readonly/>
         </div>
         <div class="form-group col-md-2">
             <label>Date</label><br />
-            <strong>@Model.DateCreated.ToShortDateString()</strong>
+            <input class="form-control" type="text" placeholder="@Model.DateCreated.ToShortDateString()" readonly />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="Description">Description</label><br />
+            <textarea class="form-control" readonly>@Model.Description</textarea>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Current Status</label><br />
-            <strong>@Model.CurrentStatus</strong>
+            <input class="form-control" type="text" placeholder="@Model.CurrentStatus" readonly />
         </div>
         <div class="form-group col-md-6">
             <label>Currently Routed To</label><br />
-            <strong>@Model.CurrentlyRoutedTo</strong>
+            <input class="form-control" type="text" placeholder="@Model.RoutedTo" readonly />
         </div>
     </div>
     <div class="form-row">
@@ -56,15 +64,26 @@
         </div>
     </div>
     <hr />
-    @if (canReview)
+    @if (canReview && Model.CurrentStatus != DocRouter.Common.Enums.TransactionStatus.Complete)
     {
         <div class="card  text-center mb-3">
             <h5 class="card-header text-white bg-primary">Review</h5>
             <div class="card-body">
                 <h5 class="card-title">This submission is currently routed to you. Please choose an option:</h5>
                 <a asp-action="Approve" asp-controller="Submission" asp-route-TransactionId="@Model.Transactions.OrderByDescending(x => x.Created).First().Id" asp-route-returnUrl="/Submission/Details/@Model.Id@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" class="btn btn-primary">Approve</a>
-                <a href="#" class="btn btn-danger">Reject</a>
-                <a href="#" class="btn btn-success">Complete</a>
+                <a asp-action="Reject" asp-controller="Submission" asp-route-TransactionId="@Model.Transactions.OrderByDescending(x => x.Created).First().Id" asp-route-returnUrl="/Submission/Details/@Model.Id@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" class="btn btn-danger">Reject</a>
+                <a asp-action="Complete" asp-controller="Submission" asp-route-TransactionId="@Model.Transactions.OrderByDescending(x => x.Created).First().Id" asp-route-returnUrl="/Submission/Details/@Model.Id@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" class="btn btn-success">Complete</a>
+            </div>
+        </div>
+    }
+    @if (canRecall && Model.CurrentStatus != DocRouter.Common.Enums.TransactionStatus.Complete)
+    {
+        <div class="card  text-center mb-3">
+            <h5 class="card-header text-white bg-primary">Options</h5>
+            <div class="card-body">
+                <h5 class="card-title">You have submitted this item for review. Please choose an option:</h5>
+                <a asp-action="Recall" asp-controller="Submission" asp-route-TransactionId="@Model.Transactions.OrderByDescending(x => x.Created).First().Id" asp-route-returnUrl="/Submission/Details/@Model.Id@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" class="btn btn-warning">Recall</a>
+                <a asp-action="Remind" asp-controller="Submission" asp-route-TransactionId="@Model.Transactions.OrderByDescending(x => x.Created).First().Id" asp-route-returnUrl="/Submission/Details/@Model.Id@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" class="btn btn-danger">Remind</a>
             </div>
         </div>
     }

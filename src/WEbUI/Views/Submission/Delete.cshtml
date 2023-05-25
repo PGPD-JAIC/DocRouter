@@ -1,0 +1,49 @@
+﻿@using DocRouter.Application.Common.Models;
+@using DocRouter.Application.Submissions.Commands.DeleteSubmission
+@model DeleteSubmissionCommand
+
+<div>
+    <h2>Delete Submission?</h2>
+    <a href="@ViewBag.ReturnUrl"><i class="fa fa-chevron-left"></i> Back</a>
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Submission Title</label>
+            <input class="form-control" type="text" placeholder="@Model.Title" readonly />
+        </div>
+        <div class="form-group col-md-4">
+            <label>Created By</label><br />
+            <input class="form-control" type="text" placeholder="@Model.CreatedBy" readonly />
+        </div>
+        <div class="form-group col-md-2">
+            <label>Date</label><br />
+            <input class="form-control" type="text" placeholder="@Model.DateCreated.ToShortDateString()" readonly />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="Description">Description</label><br />
+            <textarea class="form-control" readonly>@Model.Description</textarea>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Current Status</label><br />
+            <input class="form-control" type="text" placeholder="@Model.CurrentStatus" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <label>Currently Routed To</label><br />
+            <input class="form-control" type="text" placeholder="@Model.RoutedTo" readonly />
+        </div>
+    </div>
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <form asp-action="DeleteConfirmed" asp-route-returnUrl="@ViewBag.ReturnUrl">
+                <input type="hidden" asp-for="@Model.Id" />
+                <button type="submit" id="deleteEventSubmitButton" class="btn btn-sm btn-danger">Delete</button>
+                <a href="@ViewBag.ReturnUrl" class="btn btn-sm btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

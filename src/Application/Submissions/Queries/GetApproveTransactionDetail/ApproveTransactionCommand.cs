@@ -1,7 +1,9 @@
 ﻿using DocRouter.Application.Common.Mappings;
 using DocRouter.Application.Common.Models;
+using DocRouter.Common.Enums;
 using DocRouter.Domain.Entities;
 using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,11 +30,26 @@ namespace DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail
         /// The new comments.
         /// </summary>
         public string NewComments { get; set; }
+        /// <summary>
+        /// The name of the recepient.
+        /// </summary>
         public string Recepient { get; set; }
         /// <summary>
         /// The title of the submission associated with the transaction.
         /// </summary>
-        public string SubmissionTitle { get; set; }
+        public string Title { get; set; }
+        /// <summary>
+        /// The description of the submission.
+        /// </summary>
+        public string Description { get; set; }
+        /// <summary>
+        /// The Date the submission was created.
+        /// </summary>
+        public DateTime DateCreated { get; set; }
+        /// <summary>
+        /// The name of the person who created the submission.
+        /// </summary>
+        public string CreatedBy { get; set; }
         /// <summary>
         /// The list of file names associated with the transaction's submission.
         /// </summary>
@@ -40,20 +57,28 @@ namespace DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail
         /// <summary>
         /// The name of the person to whom the submission is currently routed.
         /// </summary>
-        public string CurrentRoutedTo { get; set; }
+        public string RoutedTo { get; set; }
+        /// <summary>
+        /// The current status of the submission.
+        /// </summary>
+        public TransactionStatus CurrentStatus { get; set; }
         /// <summary>
         /// Creates a mapping between the entity and the DTO.
         /// </summary>
-        /// <param name="profile"></param>
+        /// <param name="profile">A <see cref="MappingProfile"/></param>
         public void Mapping(MappingProfile profile)
         {
             profile.CreateMap<SubmissionTransaction, ApproveTransactionCommand>()
                 .ForMember(x => x.SubmissionId, opt => opt.MapFrom(c => c.Submission.Id))
                 .ForMember(x => x.TransactionId, opt => opt.MapFrom(c => c.Id))
-                .ForMember(x => x.SubmissionTitle, opt => opt.MapFrom(c => c.Submission.Title))
+                .ForMember(x => x.Title, opt => opt.MapFrom(c => c.Submission.Title))
+                .ForMember(x => x.Description, opt => opt.MapFrom(c => c.Submission.Description))
+                .ForMember(x => x.DateCreated, opt => opt.MapFrom(c => c.Submission.Created))
+                .ForMember(x => x.CreatedBy, opt => opt.MapFrom(c => c.Submission.CreatedBy))
                 .ForMember(x => x.FileNames, opt => opt.MapFrom(c => c.Submission.Items.Select(y => y.ItemName).ToList()))
-                .ForMember(x => x.CurrentRoutedTo, opt => opt.MapFrom(c => c.RoutedTo))
-                .ForMember(x => x.ExistingComments, opt => opt.MapFrom(c => c.Comments));
+                .ForMember(x => x.RoutedTo, opt => opt.MapFrom(c => c.RoutedTo))
+                .ForMember(x => x.ExistingComments, opt => opt.MapFrom(c => c.Comments))
+                .ForMember(x => x.CurrentStatus, opt => opt.MapFrom(c => c.Status));
         }
     }
 }

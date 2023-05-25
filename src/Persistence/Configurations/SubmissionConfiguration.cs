@@ -17,6 +17,13 @@ namespace DocRouter.Persistence.Configurations
                 .HasField("_title")
                 .IsRequired()
                 .HasMaxLength(100);
+            builder.Property(x => x.Description)
+                .HasField("_description")
+                .IsRequired()
+                .HasMaxLength(1000);
+            builder.Property(x => x.UniqueId)
+                .HasField("_uniqueId")
+                .HasMaxLength(500);
             builder.Property(x => x.FolderUri)
                 .HasField("_folderUri")
                 .IsRequired()

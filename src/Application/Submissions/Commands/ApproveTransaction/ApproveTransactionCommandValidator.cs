@@ -3,8 +3,14 @@ using FluentValidation;
 
 namespace DocRouter.Application.Submissions.Commands.ApproveTransaction
 {
+    /// <summary>
+    /// Implementation of <see cref="AbstractValidator{T}"/> that validates a <see cref="ApproveTransactionCommand"/>
+    /// </summary>
     public class ApproveTransactionCommandValidator : AbstractValidator<ApproveTransactionCommand>
     {
+        /// <summary>
+        /// Creates a new instance of the class.
+        /// </summary>
         public ApproveTransactionCommandValidator()
         {
             RuleFor(x => x.SubmissionId)

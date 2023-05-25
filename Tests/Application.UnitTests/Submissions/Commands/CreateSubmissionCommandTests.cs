@@ -26,7 +26,7 @@ namespace DocRouter.Application.UnitTests.Submissions.Commands
             // Act
             var result = await _sut.Handle(
                 new CreateSubmissionCommand() { 
-                    SubmissonName = "Test Submission", 
+                    Title = "Test Submission", 
                     Recipient = "test@mail.com",
                     Comments = "These are test comments.",
                     Files = new List<FileSubmissionDto>()

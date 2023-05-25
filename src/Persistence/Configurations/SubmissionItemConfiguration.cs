@@ -1,8 +1,5 @@
 ﻿using DocRouter.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DocRouter.Persistence.Configurations
 {
@@ -22,6 +19,10 @@ namespace DocRouter.Persistence.Configurations
             builder.Property(x => x.SubmissionId)
                 .HasField("_submissionId")
                 .IsRequired();
+            builder.Property(x => x.UniqueId)
+                .HasField("_uniqueId")
+                .IsRequired()
+                .HasMaxLength(500);
             builder.Property(x => x.ItemUri)
                 .HasField("_itemUri")
                 .IsRequired()

@@ -16,7 +16,11 @@ namespace DocRouter.Application.Submissions.Commands.CreateSubmission
         /// <summary>
         /// The Name to assign to the submission.
         /// </summary>
-        public string SubmissonName { get; set; }
+        public string Title { get; set; }
+        /// <summary>
+        /// The Description of the submission.
+        /// </summary>
+        public string Description { get; set; }
         /// <summary>
         /// A string containing comments about the submission.
         /// </summary>

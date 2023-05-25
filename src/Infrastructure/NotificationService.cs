@@ -6,15 +6,25 @@ using System.Threading.Tasks;
 
 namespace DocRouter.Infrastructure
 {
+    /// <summary>
+    /// Implementation of <see cref="INotificationService"/> that sends messages via SMTP
+    /// </summary>
     public class NotificationService : INotificationService
     {
         private readonly EmailSettings _emailSettings;
-
+        /// <summary>
+        /// Creates a new instance of the class.
+        /// </summary>
+        /// <param name="emailSettings">A <see cref="EmailSettings"/> object</param>
         public NotificationService(EmailSettings emailSettings)
         {
             _emailSettings = emailSettings;
         }
-
+        /// <summary>
+        /// Sends the message.
+        /// </summary>
+        /// <param name="message">A <see cref="MessageDto"/> object.</param>
+        /// <returns></returns>
         public Task SendAsync(MessageDto message)
         {
             try

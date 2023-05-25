@@ -5,29 +5,29 @@
         <h2>Submissions List</h2>
         <hr />
         <div class="form-row align-items-top mb-2">
-            <div class="col-md-4">
-                <select asp-for="SubmittedBySearch" class="form-control" asp-items="@(Model.SubmittingUsers.Select(x => new SelectListItem {Value = x, Text = x }).ToList())">
+            <div class="form-group-sm col-md-4">
+                <select asp-for="SubmittedBySearch" class="form-control form-control-sm" asp-items="@(Model.SubmittingUsers.Select(x => new SelectListItem {Value = x, Text = x }).ToList())">
                     <option value="">Select User</option>
                 </select>
             </div>
             <div class="col-md-4">
-                <select asp-for="RoutedToSearch" class="form-control" asp-items="@(Model.RoutedToUsers.Select(x => new SelectListItem {Value = x, Text = x }).ToList())">
+                <select asp-for="RoutedToSearch" class="form-control form-control-sm" asp-items="@(Model.RoutedToUsers.Select(x => new SelectListItem {Value = x, Text = x }).ToList())">
                     <option value="">Select User</option>
                 </select>
             </div>
             <div class="col-md-2">
-                <input type="text" name="StartDate" class="form-control" value="@Model.StartDate" placeholder="Start Date" />
+                <input asp-for="StartDate" type="date" asp-format="{0:MM/dd/yyyy}" class="form-control">
             </div>
             <div class="col-md-2">
-                <input type="text" name="EndDate" class="form-control" value="@Model.StartDate" placeholder="End Date" />
+                <input asp-for="EndDate" type="date" asp-format="{0:MM/dd/yyyy}" class="form-control">
             </div>
         </div>
         <div class="form-row align-items-center mb-2">
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary" id="filterSubmit"><i class="fa fa-search"></i> Search</button>
+                <button type="submit" class="btn btn-primary btn-sm" id="filterSubmit"><i class="fa fa-search"></i> Search</button>
                 @if(!string.IsNullOrEmpty(Model.RoutedToSearch) || !string.IsNullOrEmpty(Model.SubmittedBySearch) || Model.StartDate != null || Model.EndDate != null)
                 {
-                    <button type="reset" class="btn btn-success" asp-action="Index" asp-controller="Index"><i class="fa fa-refresh"></i> Reset</button>
+                    <a type="reset" class="btn btn-success btn-sm" asp-action="Index" asp-controller="Submission"><i class="fa fa-refresh"></i> Reset</a>
                 }
             </div>
         </div>
@@ -196,16 +196,18 @@
 @section Head{
     <link rel="stylesheet" href="~/lib/select2/css/select2.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+    
+
 }
 @section Scripts{
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#SubmittedBySearch").select2({
-                width: '100%'
+                width: '100%',
             });
             $("#RoutedToSearch").select2({
-                width: '100%'
+                width: '100%',
             });
         });
     </script>
