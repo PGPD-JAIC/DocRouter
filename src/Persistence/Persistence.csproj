@@ -1,8 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>DocRouter.Persistence</RootNamespace>
     <AssemblyName>DocRouter.Persistence</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <UserSecretsId>6c82be57-a456-4b43-b754-c277b243df56</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>

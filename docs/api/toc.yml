@@ -1,2 +1,19 @@
-- name: TO BE REPLACED
-  href: index.md
+items:
+- name: Application
+  href: Application/
+  homepage: Application/index.md
+- name: Common
+  href: Common/
+  homepage: Common/index.md
+- name: Domain
+  href: Domain/
+  homepage: Domain/index.md
+- name: Infrastructure
+  href: Infrastructure/
+  homepage: Infrastructure/index.md
+- name: Persistence
+  href: Persistence/
+  homepage: Persistence/index.md
+- name: WebUI
+  href: WebUI/
+  homepage: WebUI/index.md

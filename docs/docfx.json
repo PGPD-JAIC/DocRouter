@@ -4,11 +4,77 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
-          ]
+            "src/Common/**.csproj"
+          ],
+          "src": "../"
         }
       ],
-      "dest": "api",
+      "dest": "api/Common",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/Domain/**.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "api/Domain",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/Application/**.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "api/Application",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/Infrastructure/**.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "api/Infrastructure",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/Persistence/**.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "api/Persistence",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/WebUI/**.csproj"
+          ],
+          "src": "../"
+        }
+      ],
+      "dest": "api/WebUI",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     }
@@ -18,6 +84,7 @@
       {
         "files": [
           "api/**.yml",
+          "api/**/index.md",
           "api/index.md"
         ]
       },
@@ -27,6 +94,18 @@
           "articles/**/toc.yml",
           "toc.yml",
           "*.md"
+        ]
+      },
+      {
+        "files": [
+          "faq/**.md",          
+          "faq/toc.yml"
+        ]
+      },
+      {
+        "files": [
+          "help/**.md",
+          "help/toc.yml"
         ]
       }
     ],
@@ -49,7 +128,10 @@
       }
     ],
     "dest": "_site",
-    "globalMetadataFiles": [],
+    "globalMetadata": {
+      "_appTitle": "DocRouter Documentation",
+      "_enableSearch": "true"
+    },
     "fileMetadataFiles": [],
     "template": [
       "default"
