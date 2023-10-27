@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail
 {
     /// <summary>
-    /// Implementation of <see cref="IRequestHandler"/> that handles a request to get details of a submission for a deletion operation.
+    /// Implementation of <see cref="IRequestHandler{GetDeleteSubmissionDetailQuery, DeleteSubmissionCommand}"/> that handles a request to get details of a submission for a deletion operation.
     /// </summary>
     public class GetDeleteSubmissionDetailQueryHandler : IRequestHandler<GetDeleteSubmissionDetailQuery, DeleteSubmissionCommand>
     {

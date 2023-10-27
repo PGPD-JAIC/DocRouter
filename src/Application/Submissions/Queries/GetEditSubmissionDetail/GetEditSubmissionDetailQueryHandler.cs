@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail
 {
     /// <summary>
-    /// Implementation of <see cref="IRequestHandler"/> that handles a request to get submission details for editing.
+    /// Implementation of <see cref="IRequestHandler{GetEditSubmissionDetailQuery, EditSubmissionCommand}"/> that handles a request to get submission details for editing.
     /// </summary>
     public class GetEditSubmissionDetailQueryHandler : IRequestHandler<GetEditSubmissionDetailQuery, EditSubmissionCommand>
     {
