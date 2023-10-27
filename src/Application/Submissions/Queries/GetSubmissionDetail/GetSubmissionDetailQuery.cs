@@ -3,7 +3,7 @@
 namespace DocRouter.Application.Submissions.Queries.GetSubmissionDetail
 {
     /// <summary>
-    /// Implementation of <see cref="IRequest"/> that retrieves details of a <see cref="Submission"/>
+    /// Implementation of <see cref="IRequest"/> that retrieves details of a <see cref="Domain.Entities.Submission"/>
     /// </summary>
     public class GetSubmissionDetailQuery : IRequest<SubmissionDto>
     {

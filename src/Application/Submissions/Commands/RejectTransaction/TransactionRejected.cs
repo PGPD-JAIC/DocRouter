@@ -34,7 +34,7 @@ namespace DocRouter.Application.Submissions.Commands.RejectTransaction
         /// </summary>
         public string SubmissionTitle { get; set; }
         /// <summary>
-        /// Implementation of <see cref="INotificationHandler"/> that handles the notification.
+        /// Implementation of <see cref="INotificationHandler{TransactionRejected}"/> that handles the notification.
         /// </summary>
         public class TransactionRejectedHandler : INotificationHandler<TransactionRejected>
         {

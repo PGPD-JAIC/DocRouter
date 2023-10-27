@@ -21,7 +21,7 @@ namespace DocRouter.Application.Common.Behaviors
         /// <summary>
         /// Creates a new Instance of the Class
         /// </summary>
-        /// <param name="logger">An implementation of <see cref="ILogger"></see></param>
+        /// <param name="logger">An implementation of <see cref="ILogger{T}"></see></param>
         /// <param name="currentUserService">An implementation of <see cref="ICurrentUserService"></see></param>
         public RequestPerformanceBehavior(ILogger<TRequest> logger, ICurrentUserService currentUserService)
         {

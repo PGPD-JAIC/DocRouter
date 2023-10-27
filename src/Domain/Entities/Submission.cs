@@ -1,11 +1,12 @@
 ﻿using DocRouter.Domain.Common;
 using DocRouter.Domain.Exceptions.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DocRouter.Domain.Entities
 {
+    /// <summary>
+    /// Entity class that represents a document submission.
+    /// </summary>
     public class Submission : BaseEntity
     {
         /// <summary>
@@ -17,7 +18,7 @@ namespace DocRouter.Domain.Entities
         /// </summary>
         /// <param name="title">A string containing the title of the submission.</param>
         /// <param name="description">A string containing the description of the submission.</param>
-        /// <param name="folderUri"></param>
+        /// <param name="folderUri">The Uri of the cloud folder associated with the submission.</param>
         public Submission(
             string title,
             string description,

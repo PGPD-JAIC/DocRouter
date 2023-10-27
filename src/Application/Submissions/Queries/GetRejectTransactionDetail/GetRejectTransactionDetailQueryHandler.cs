@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail
 {
     /// <summary>
-    /// Implementation of <see cref="IRequestHandler"/> that handles a request to get a transaction response.
+    /// Implementation of <see cref="IRequestHandler{GetRejectTransactionDetailQueryHandler, RejectTransactionCommand}"/> that handles a request to get a transaction response.
     /// </summary>
     public class GetRejectTransactionDetailQueryHandler : IRequestHandler<GetRejectTransactionDetailQuery, RejectTransactionCommand>
     {
