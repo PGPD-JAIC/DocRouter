@@ -10,8 +10,8 @@ namespace DocRouter.Application.Common.Behaviors
     /// <summary>
     /// Behavior that performs authorization on requests.
     /// </summary>
-    /// <typeparam name="TRequest"></typeparam>
-    /// <typeparam name="TResponse"></typeparam>
+    /// <typeparam name="TRequest">A <see cref="IRequest{TResponse}"/> object.</typeparam>
+    /// <typeparam name="TResponse">A <see cref="IRequest{TResponse}"/>object.</typeparam>
     public class RequestAuthorizationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
@@ -19,7 +19,7 @@ namespace DocRouter.Application.Common.Behaviors
         /// <summary>
         /// Creates a new instance of the Behavior.
         /// </summary>
-        /// <param name="authorizers"></param>
+        /// <param name="authorizers">A <see cref="IEnumerable{IAuthorizer}"/> collection.</param>
         public RequestAuthorizationBehavior(IEnumerable<IAuthorizer<TRequest>> authorizers)
         {
             _authorizers = authorizers;
@@ -29,7 +29,7 @@ namespace DocRouter.Application.Common.Behaviors
         /// </summary>
         /// <param name="request">An implementation of <see cref="IRequest"/></param>
         /// <param name="cancellationToken">A cancellationToken</param>
-        /// <param name="next">A <see cref="RequestHandlerDelegate{TResponse}"/></param>
+        /// <param name="next">A <see cref="MediatR.RequestHandlerDelegate{TResponse}"/> object.</param>
         /// <returns></returns>
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {

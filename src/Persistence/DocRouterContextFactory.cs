@@ -3,7 +3,7 @@
 namespace DocRouter.Persistence
 {
     /// <summary>
-    /// Implemention of <see cref="CIU_CarjackingsContextFactoryBase{TContext}"></see>
+    /// Implemention of <see cref="DocRouterContextFactoryBase{TContext}"></see>
     /// </summary>
     public class DocRouterContextFactory : DocRouterContextFactoryBase<DocRouterContext>
     {

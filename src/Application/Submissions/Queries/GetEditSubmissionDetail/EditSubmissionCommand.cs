@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail
 {
+    /// <summary>
+    /// Implementation of <see cref="IRequest{Result}"/> that handles a command to edit a submission.
+    /// </summary>
     public class EditSubmissionCommand : IMapFrom<Submission>, IRequest<Result>
     {
         /// <summary>
@@ -41,6 +44,10 @@ namespace DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail
         /// A list of Ids of files currently associated with the submission that are to be removed.
         /// </summary>
         public List<int> FilesToRemove { get; set; } = new List<int>();
+        /// <summary>
+        /// Creates a mapping between the Entity class and the DTO
+        /// </summary>
+        /// <param name="profile">A <see cref="MappingProfile"/> object.</param>
         public void Mapping(MappingProfile profile)
         {
             profile.CreateMap<Submission, EditSubmissionCommand>()

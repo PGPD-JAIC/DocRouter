@@ -3,7 +3,7 @@
 namespace DocRouter.Domain.Exceptions.Entities
 {
     /// <summary>
-    /// Implementation of <see cref="ArgumentException"/> that is used in the <see cref="Submission"/> entity class.
+    /// Implementation of <see cref="ArgumentException"/> that is used in the <see cref="Domain.Entities.Submission"/> entity class.
     /// </summary>
     public class SubmissionArgumentException : ArgumentException
     {
