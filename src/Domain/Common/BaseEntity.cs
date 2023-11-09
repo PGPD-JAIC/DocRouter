@@ -1,7 +1,5 @@
 ﻿using DocRouter.Domain.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DocRouter.Domain.Common
 {
@@ -15,19 +13,25 @@ namespace DocRouter.Domain.Common
         /// The integer Id of the entity.
         /// </summary>
         public int Id => _id;
-        protected string _createdBy;
+        private protected string _createdBy;
+        /// <summary>
+        /// The username of the user who created the submission.
+        /// </summary>
         public string CreatedBy => _createdBy;
-        protected DateTime _created;
+        private protected DateTime _created;
         /// <summary>
         /// The Date/Time the entity was created.
         /// </summary>
         public DateTime Created => _created;
-        protected string _editedBy;
+        private protected string _editedBy;
         /// <summary>
         /// The username that last edited the entity.
         /// </summary>
         public string EditedBy => _editedBy;
-        protected DateTime? _edited;
+        private protected DateTime? _edited;
+        /// <summary>
+        /// The Date/Time the entity was last edited.
+        /// </summary>
         public DateTime? Edited => _edited;
         /// <summary>
         /// Updates the name of the user who is creating the entity.

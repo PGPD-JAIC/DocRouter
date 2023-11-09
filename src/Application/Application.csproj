@@ -21,4 +21,7 @@
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Submissions\Queries\GetCreateSubmission\" />
+  </ItemGroup>
 </Project>

@@ -1,42 +1,50 @@
-﻿using DocRouter.Application.Common.Interfaces;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace DocRouter.WebUI.Services
 {
+    /// <summary>
+    /// Implementation of <see cref="IClaimsTransformation"/> that loads user claims.
+    /// </summary>
     public class ClaimsLoader : IClaimsTransformation
     {
-        private readonly IDocRouterContext _context;
-
+        private List<string> _adminUsers;
         /// <summary>
         /// Creates a new instance of the class.
         /// </summary>
-        /// <param name="context">An implementation of <see cref="IDocRouterContext"/></param>
-        public ClaimsLoader(IDocRouterContext context)
+        /// <param name="configuration">A <see cref="IConfiguration"/> obtained from the container.</param>
+        public ClaimsLoader(IConfiguration configuration)
         {
-            _context = context;
+            _adminUsers = configuration.GetSection("AdminUsers").Get<List<string>>();
         }
+        /// <summary>
+        /// Transforms the claims.
+        /// </summary>
+        /// <remarks>
+        /// This method will add an "Admin" claim to any usernames in the "AdminUsers" list in configuration.
+        /// </remarks>
+        /// <param name="principal"></param>
+        /// <returns>A <see cref="Task{ClaimsPrincipal}"/> object</returns>
         public async Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
         {
-            //var identity = principal.Identities.FirstOrDefault(x => x.IsAuthenticated);
-            //if (identity == null) return principal;
-            //var user = identity.Name;
-            //if (user == null) return principal;
-            //if (principal.Identity is ClaimsIdentity identity1)
-            //{
-            //    string logonName = user.Split('\\')[1];
-            //    List<UserRole> userRoles = await _context.UserRoles
-            //        .Include(x => x.Role)
-            //        .Where(x => x.UserName == user)
-            //        .ToListAsync();
-            //    var ci = identity1;
-            //    foreach (UserRole userRole in userRoles)
-            //    {
-            //        var c = new Claim(ci.RoleClaimType, userRole.Role.RoleTypeName);
-            //        ci.AddClaim(c);
-            //    }
-            //}
+            var identity = principal.Identities.FirstOrDefault(x => x.IsAuthenticated);
+            if (identity == null) return principal;
+            var user = identity.Name;
+            if (user == null) return principal;
+            if (principal.Identity is ClaimsIdentity identity1)
+            {
+                string logonName = user.Split('\\')[1];
+                var ci = identity1;
+                if (_adminUsers.Contains(logonName))
+                {
+                    var c = new Claim(ci.RoleClaimType, "Admin");
+                    ci.AddClaim(c);
+                }
+            }
             return principal;
         }
     }

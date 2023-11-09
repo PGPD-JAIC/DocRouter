@@ -23,7 +23,7 @@ namespace DocRouter.Application.Submissions.Queries.GetSubmissionDetail
         /// </summary>
         /// <param name="context">An implementation of <see cref="IDocRouterContext"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
-        /// <param name="mediator">An implementation of <see cref="IMediator"/></param>
+        /// <param name="mapper">An implementation of <see cref="IMapper"/></param>
         public GetSubmissionDetailQueryHandler(IDocRouterContext context, ILogger<GetSubmissionDetailQueryHandler> logger, IMapper mapper)
         {
             _context = context;
@@ -44,6 +44,7 @@ namespace DocRouter.Application.Submissions.Queries.GetSubmissionDetail
                 .FirstOrDefaultAsync(x => x.Id == request.Id);
             if (result == null)
             {
+                _logger.LogError("GetSubmissionDetail failed: no submission with id: {0} found.", request.Id);
                 throw new NotFoundException($"No entity with Id {request.Id} was found.", request.Id);
             }
             return result;

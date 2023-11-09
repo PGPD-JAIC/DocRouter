@@ -25,6 +25,7 @@ namespace DocRouter.Application.Submissions.Commands.EditSubmission
         private readonly IFileStorageService _fileStorageService;
         private readonly IDateTime _dateTime;
         private readonly ILogger<CreateSubmissionCommandHandler> _logger;
+        private readonly ICurrentUserService _currentUserService;
         private readonly IMediator _mediator;
         /// <summary>
         /// Creates a new instance of the class.
@@ -32,26 +33,29 @@ namespace DocRouter.Application.Submissions.Commands.EditSubmission
         /// <param name="context">An implementation of <see cref="IDocRouterContext"/></param>
         /// <param name="fileStorageService">An implementation of <see cref="IFileStorageService"/></param>
         /// <param name="dateTime">An implementation of <see cref="IDateTime"/></param>
-        /// <param name="logger"></param>
-        /// <param name="mediator"></param>
+        /// <param name="logger">An implementation of <see cref="ILogger{CreateSubmissionCommandHandler}"/>.</param>
+        /// <param name="currentUserService">An implementation of <see cref="ICurrentUserService"/>.</param>
+        /// <param name="mediator">An Implementation of <see cref="IMediator"/></param>
         public EditSubmissionCommandHandler(
             IDocRouterContext context,
             IFileStorageService fileStorageService,
             IDateTime dateTime,
             ILogger<CreateSubmissionCommandHandler> logger,
+            ICurrentUserService currentUserService,
             IMediator mediator)
         {
             _context = context;
             _dateTime = dateTime;
             _fileStorageService = fileStorageService;
             _logger = logger;
+            _currentUserService = currentUserService;   
             _mediator = mediator;
 
         }
         /// <summary>
         /// Handles the request.
         /// </summary>
-        /// <param name="request">A <see cref="EditSubmissionCommand"/> object.</param>
+        /// <param name="command">A <see cref="EditSubmissionCommand"/> object.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/></param>
         /// <returns>a <see cref="Result"/></returns>
         public async Task<Result> Handle(EditSubmissionCommand command, CancellationToken cancellationToken)
@@ -63,66 +67,72 @@ namespace DocRouter.Application.Submissions.Commands.EditSubmission
 
             if (toEdit == null)
             {
-                throw new NotFoundException($"No submission with Id : {command.Id} could be found.", command.Id);
+                throw new NotFoundException("No submission with Id : {0} could be found.", command.Id);
             }
             try
             {
                 // Update Title, if needed
                 if (toEdit.Title != command.Title)
                 {
-                    _logger.LogInformation($"Updating Submission [{toEdit.Id}] Title from [{toEdit.Title}] to [{command.Title}].");
+                    _logger.LogInformation("Updating Submission [{0}] Title from [{1}] to [{2}].", toEdit.Id, toEdit.Title, command.Title);
                     toEdit.UpdateTitle(command.Title);
                 }
                 // Update Description, if needed
                 if (toEdit.Description != command.Description)
                 {
-                    _logger.LogInformation($"Updating Submission [{toEdit.Id}] Description from [{toEdit.Description}] to [{command.Description}].");
+                    _logger.LogInformation("Updating Submission [{0}] Description from [{1}] to [{2}].", toEdit.Id, toEdit.Description, command.Description);
                     toEdit.UpdateDescription(command.Description);
                 }
                 // Update routing, if required.
                 if (command.CurrentlyRoutedTo != command.NewRoutedTo)
                 {
-                    _logger.LogInformation($"Updating Submission [{toEdit.Id}] Routing from [{command.CurrentlyRoutedTo}] to [{command.NewRoutedTo}].");
+                    _logger.LogInformation("Updating Submission [{0}] Routing from [{1}] to [{2}].", toEdit.Id, command.CurrentlyRoutedTo, command.NewRoutedTo);
                     // Find the newest transaction
-                    _logger.LogInformation($"Retrieving Submission [{toEdit.Id}] newest transaction.");
-                    var xActionToRecall = toEdit.Transactions.OrderByDescending(t => t.TransactionDate).First();
+                    _logger.LogInformation("Retrieving Submission [{0}] newest transaction.", toEdit.Id);
+                    var xActionToRecall = toEdit.Transactions.OrderByDescending(t => t.Created).First();
                     // Recall the newest transaction
-                    _logger.LogInformation($"Recalling Transaction [{xActionToRecall.Id}].");
-                    xActionToRecall.UpdateTransactionStatus(DocRouter.Common.Enums.TransactionStatus.Recalled);
+                    _logger.LogInformation("Recalling Transaction [{0}].", xActionToRecall.Id);
+                    xActionToRecall.Recall(_dateTime.Now);
                     // Add a newer transaction with the updated recipient.
                     _logger.LogInformation($"Adding new Transaction.");
-                    toEdit.AddTransaction(new SubmissionTransaction(_dateTime.Now, _dateTime.Now, DocRouter.Common.Enums.TransactionStatus.Pending, command.NewRoutedTo, xActionToRecall.Comments));
+                    toEdit.AddTransaction(new SubmissionTransaction(
+                        _dateTime.Now, 
+                        _dateTime.Now, 
+                        command.NewRoutedTo, 
+                        _currentUserService.Email, 
+                        command.Comments)
+                        );
                 }
                 // Add any new Files
                 if (command.FilesToAdd.Count > 0)
                 {
-                    _logger.LogInformation($"Adding [{command.FilesToAdd.Count}] to Submission [{toEdit.Id}].");
+                    _logger.LogInformation("Adding [{0}] to Submission [{1}].", command.FilesToAdd.Count, toEdit.Id);
                     foreach (var file in command.FilesToAdd)
                     {
-                        _logger.LogInformation($"Attempting to add [{file.FileName}] to Directory Id: [{toEdit.UniqueId}]");
-                        FileResult fileResult = await _fileStorageService.AddFileToDirectoryAsync(toEdit.UniqueId, file);
-                        _logger.LogInformation($"File [{file.FileName}] successfully added to Directory Id: [{toEdit.UniqueId}] as Id: [{fileResult.Id}]");
-                        _logger.LogInformation($"Adding file to Submission Id: [{toEdit.Id}]");
-                        var submissionItem = new SubmissionItem(file.FileName, fileResult.Uri, fileResult.Id);
-                        toEdit.AddItem(submissionItem);
+                        _logger.LogInformation("Attempting to add [{0}] to Directory Id: [{1}]", file.FileName, toEdit.ItemId);
+                        var fileResult = await _fileStorageService.AddFileToDirectoryAsync(toEdit, file);
+                        _logger.LogInformation("File [{0}] successfully added to Directory Id: [{1}] as Id: [{2}]", fileResult.ItemName, toEdit.ItemId, fileResult.ItemId);
+                        _logger.LogInformation("Adding file to Submission Id: [{0}]", toEdit.Id);
+                        toEdit.AddItem(fileResult);
                     }
                 }
                 // Remove any files
                 if (command.FilesToRemove.Count > 0)
                 {
-                    _logger.LogInformation($"Removing [{command.FilesToRemove.Count}] from Submission [{toEdit.Id}].");
+                    _logger.LogInformation("Removing [{0}] from Submission [{1}].", command.FilesToRemove.Count, toEdit.Id);
                     foreach (int id in command.FilesToRemove)
                     {
-                        _logger.LogInformation($"Attempting to locate file id: [{id}] in Submission [{toEdit.Id}]'s file collection.");
+                        _logger.LogInformation("Attempting to locate file id: [{0}] in Submission [{1}]'s file collection.", id, toEdit.Id);
                         var item = toEdit.Items.First(i => i.Id == id);
                         if (item != null)
                         {
-                            _logger.LogInformation($"File Id: [{id}] found, attemping to remove from storage via id: [{item.UniqueId}]");
+                            _logger.LogInformation("File Id: [{0}] found, attemping to remove from storage via id: [{1}]", id, item.ItemId);
+                            await _fileStorageService.DeleteFileAsync(item);
                             toEdit.RemoveItem(item);
-                            await _fileStorageService.DeleteFileAsync(item.UniqueId);
                         }
                     }
                 }
+                await _context.SaveChangesAsync(cancellationToken);
                 return new Result(true, toEdit.FolderUri, new List<string>());
             }
             catch(Exception ex)

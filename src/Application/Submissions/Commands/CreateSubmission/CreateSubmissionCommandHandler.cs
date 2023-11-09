@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,27 +22,30 @@ namespace DocRouter.Application.Submissions.Commands.CreateSubmission
         private readonly IDateTime _dateTime;
         private readonly ILogger<CreateSubmissionCommandHandler> _logger;
         private readonly IMediator _mediator;
+        private readonly ICurrentUserService _currentUserService;
         /// <summary>
         /// Creates a new instance of the class.
         /// </summary>
         /// <param name="context">An implementation of <see cref="IDocRouterContext"/></param>
         /// <param name="fileStorageService">An implementation of <see cref="IFileStorageService"/></param>
         /// <param name="dateTime">An implementation of <see cref="IDateTime"/></param>
-        /// <param name="logger"></param>
-        /// <param name="mediator"></param>
+        /// <param name="logger">An implementation ogf <see cref="ILogger{CreateSubmissionCommandHandler}"/></param>
+        /// <param name="mediator">An implemenatation of <see cref="IMediator"/></param>
+        /// <param name="currentUserService">An implementation of <see cref="ICurrentUserService"/></param>
         public CreateSubmissionCommandHandler(
             IDocRouterContext context,
             IFileStorageService fileStorageService,
             IDateTime dateTime,
             ILogger<CreateSubmissionCommandHandler> logger,
-            IMediator mediator)
+            IMediator mediator,
+            ICurrentUserService currentUserService)
         {
             _context = context;
             _dateTime = dateTime;
             _fileStorageService = fileStorageService;
             _logger = logger;
             _mediator = mediator;
-
+            _currentUserService = currentUserService;
         }
         /// <summary>
         /// Handles the request.
@@ -53,33 +57,46 @@ namespace DocRouter.Application.Submissions.Commands.CreateSubmission
         {
             try
             {
-                //TODO: Remove hard-coded value
-                DirectoryResult folder = await _fileStorageService.CreateDirectoryAsync(request.Recipient, "jcsmith1@co.pg.md.us");
-                var submission = new Submission(request.Title, request.Description, folder.Uri, folder.Id);
+                // Create initial submission entity with the fields required to create a directory in storage.
+                Submission submissionToAdd = new Submission(
+                    request.Title,
+                    request.Description,
+                    request.DriveId = request.DriveId.Split(',')[0],
+                    request.ListId = request.DriveId?.Split(',')?[0] ?? "",
+                    new SubmissionTransaction(
+                        _dateTime.Now, 
+                        _dateTime.Now, 
+                        request.Recipient, 
+                        _currentUserService.Email, 
+                        request.Comments)
+                    );
+                // Create the directory. The returned entity should have the storage fields populated from the operation that creates the directory.
+                Submission folder = await _fileStorageService.CreateDirectoryAsync(submissionToAdd);
 
+                // Next, add each file to the submission
+                int fileCount = 0;
                 foreach (var file in request.Files)
-                {
-                    FileResult fileResult = await _fileStorageService.AddFileToDirectoryAsync(folder.Id, file);
-                    var submissionItem = new SubmissionItem(file.FileName, fileResult.Uri, fileResult.Id);
-                    submission.AddItem(submissionItem);
+                {   
+                    var fileToAdd = await _fileStorageService.AddFileToDirectoryAsync(folder, file);
+                    fileCount++;
+                    fileToAdd.UpdateDisplayOrder(fileCount);
+                    folder.AddItem(fileToAdd);
                 }
-                var transaction = new SubmissionTransaction(_dateTime.Now, _dateTime.Now, DocRouter.Common.Enums.TransactionStatus.Pending, request.Recipient, request.Comments);
-                submission.AddTransaction(transaction);
-                await _context.Submissions.AddAsync(submission);
+                await _context.Submissions.AddAsync(folder);
                 await _context.SaveChangesAsync(cancellationToken);
                 await _mediator.Publish(new SubmissionCreated 
                     { 
-                        SubmissionId = submission.Id, 
-                        SubmissionUri = submission.FolderUri,
-                        SubmissionTitle = submission.Title, 
-                        SubmittedBy = submission.CreatedBy,
-                        SubmittedTo = request.Recipient
-                    });
-                return new Result(true, submission.FolderUri, new List<string>());
+                        SubmissionId = folder.Id, 
+                        SubmissionUri = folder.FolderUri,
+                        SubmissionTitle = folder.Title, 
+                        SubmittedBy = folder.Transactions.First().RoutedFrom,
+                        SubmittedTo = folder.Transactions.First().RoutedTo
+                });
+                return new Result(true, folder.FolderUri, new List<string>());
             }
             catch (Exception ex)
             {
-                _logger.LogError($"CreateSubmissionHandler error: {ex.Message}");
+                _logger.LogError("CreateSubmissionHandler error: {0}", ex.Message);
                 return Result.Failure(new List<string>() { ex.Message });
             }
 

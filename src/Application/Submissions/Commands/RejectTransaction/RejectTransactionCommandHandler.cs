@@ -30,6 +30,7 @@ namespace DocRouter.Application.Submissions.Commands.RejectTransaction
         /// <param name="dateTime">An implementation of <see cref="IDateTime"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
         /// <param name="mediator">An implementation of <see cref="IMediator"/></param>
+        /// <param name="currentUserService">An implementation of <see cref="ICurrentUserService"/></param>
         public RejectTransactionCommandHandler(
             IDocRouterContext context,
             IDateTime dateTime,
@@ -49,23 +50,36 @@ namespace DocRouter.Application.Submissions.Commands.RejectTransaction
         /// </summary>
         /// <param name="command">A <see cref="RejectTransactionCommand"/> object.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/></param>
-        /// <returns></returns>
+        /// <returns>A <see cref="Result"/> object containing the results of the operation.</returns>
         /// <exception cref="NotFoundException">Thrown when the provided Submission or Transaction Id can't be found.</exception>
         public async Task<Result> Handle(RejectTransactionCommand command, CancellationToken cancellationToken)
         {
             var submission = await _context.Submissions.FindAsync(command.SubmissionId);
+
             if (submission == null)
             {
                 throw new NotFoundException($"No submission found with id: {command.SubmissionId}", command.SubmissionId);
             }
+
             var transactionToEdit = await _context.Transactions.FindAsync(command.TransactionId);
+
             if (transactionToEdit == null)
             {
                 throw new NotFoundException($"No transaction found with id {command.TransactionId}", command.TransactionId);
             }
-            transactionToEdit.UpdateTransactionStatus(DocRouter.Common.Enums.TransactionStatus.Rejected);
-            submission.AddTransaction(new SubmissionTransaction(_dateTime.Now, _dateTime.Now, DocRouter.Common.Enums.TransactionStatus.Pending, transactionToEdit.RoutedTo, command.NewComments));
+
+            transactionToEdit.Reject(_dateTime.Now);
+
+            submission.AddTransaction(
+                new SubmissionTransaction(
+                    _dateTime.Now, 
+                    _dateTime.Now, 
+                    transactionToEdit.RoutedTo,
+                    _currentUserService.Email, 
+                    command.NewComments));
+
             await _context.SaveChangesAsync(cancellationToken);
+
             await _mediator.Publish(new TransactionRejected
             {
                 SubmissionId = submission.Id,
@@ -74,6 +88,7 @@ namespace DocRouter.Application.Submissions.Commands.RejectTransaction
                 SubmittedBy = transactionToEdit.CreatedBy,
                 RejectedBy = transactionToEdit.RoutedTo
             });
+
             return Result.Success();
         }
     }

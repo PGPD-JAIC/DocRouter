@@ -29,6 +29,7 @@ namespace DocRouter.Application.Submissions.Commands.CompleteTransaction
         /// <param name="dateTime">An implementation of <see cref="IDateTime"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
         /// <param name="mediator">An implementation of <see cref="IMediator"/></param>
+        /// <param name="currentUserService">An implementation of <see cref="ICurrentUserService"/></param>
         public CompleteTransactionCommandHandler(
             IDocRouterContext context,
             IDateTime dateTime,
@@ -51,24 +52,9 @@ namespace DocRouter.Application.Submissions.Commands.CompleteTransaction
         /// <returns>A <see cref="Result"/></returns>
         public async Task<Result> Handle(CompleteTransactionCommand command, CancellationToken cancellationToken)
         {
-            var submission = await _context.Submissions.FindAsync(command.SubmissionId);
-            if (submission == null)
-            {
-                throw new NotFoundException($"No submission found with id: {command.SubmissionId}", command.SubmissionId);
-            }
-            var transactionToEdit = await _context.Transactions.FindAsync(command.TransactionId);
-            if (transactionToEdit == null)
-            {
-                throw new NotFoundException($"No transaction found with id {command.TransactionId}", command.TransactionId);
-            }
-            transactionToEdit.UpdateTransactionStatus(DocRouter.Common.Enums.TransactionStatus.Approved);
-            submission.AddTransaction(new SubmissionTransaction(
-                _dateTime.Now,
-                _dateTime.Now,
-                DocRouter.Common.Enums.TransactionStatus.Complete,
-                _currentUserService.UserId,
-                command.NewComments
-                ));
+            var submission = await _context.Submissions.FindAsync(command.SubmissionId) ?? throw new NotFoundException($"No submission found with id: {command.SubmissionId}", command.SubmissionId);
+            var transactionToEdit = await _context.Transactions.FindAsync(command.TransactionId) ?? throw new NotFoundException($"No transaction found with id {command.TransactionId}", command.TransactionId);
+            transactionToEdit.Complete(_dateTime.Now);
             await _context.SaveChangesAsync(cancellationToken);
             await _mediator.Publish(new TransactionCompleted
             {

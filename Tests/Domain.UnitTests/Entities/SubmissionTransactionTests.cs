@@ -15,18 +15,19 @@ namespace DocRouter.Domain.UnitTests.Entities
         {
             // Arrange
             DateTime testDate = new DateTime(2023, 1, 1);
-            TransactionStatus testStatus = TransactionStatus.Pending;
             string routedTo = "test@mail.net";
+            string routedFrom = "test2@mail.net";
             string comments = "These are test comments.";
 
             // Act
-            var toTest = new SubmissionTransaction(testDate, testDate, testStatus, routedTo, comments);
+            var toTest = new SubmissionTransaction(testDate, testDate, routedTo, routedFrom, comments);
 
             // Assert
-            toTest.TransactionDate.ShouldBe(testDate);
-            toTest.Status.ShouldBe(testStatus);
+            toTest.SubmitDate.ShouldBe(testDate);
+            toTest.Status.ShouldBe(TransactionStatus.Pending);
             toTest.Comments.ShouldBe(comments);
             toTest.RoutedTo.ShouldBe(routedTo);
+            toTest.RoutedFrom.ShouldBe(routedFrom);
         }
         [Fact]
         public void Given_Invalid_TransactionDate_Throws_SubmissionTransactionArgumentException()
@@ -34,12 +35,12 @@ namespace DocRouter.Domain.UnitTests.Entities
             // Arrange
             DateTime testDate = new DateTime(2023, 1, 1);
             DateTime testCurrentDate = new DateTime(2022, 1, 1);
-            TransactionStatus testStatus = TransactionStatus.Pending;
             string routedTo = "test@mail.net";
+            string routedFrom = "test2@mail.net";
             string comments = "These are test comments.";
 
             // Act/Assert
-            Assert.Throws<SubmissionTransactionArgumentException>(() => new SubmissionTransaction(testCurrentDate, testDate, testStatus, routedTo, comments));
+            Assert.Throws<SubmissionTransactionArgumentException>(() => new SubmissionTransaction(testCurrentDate, testDate, routedTo, routedFrom, comments));
         }
         [Theory]
         [InlineData("")]
@@ -48,24 +49,38 @@ namespace DocRouter.Domain.UnitTests.Entities
         {
             // Arrange
             DateTime testDate = new DateTime(2023, 1, 1);
-            TransactionStatus testStatus = TransactionStatus.Pending;
             string routedTo = value;
+            string routedFrom = "test2@mail.net";
             string comments = "These are test comments.";
 
             // Act/Assert
-            Assert.Throws<SubmissionTransactionArgumentException>(() => new SubmissionTransaction(testDate, testDate, testStatus, routedTo, comments));
+            Assert.Throws<SubmissionTransactionArgumentException>(() => new SubmissionTransaction(testDate, testDate, routedTo, routedFrom, comments));
+        }
+        [Theory]
+        [InlineData("")]
+        [InlineData("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111")]
+        public void Given_Invalid_RoutedFrom_Throws_SubmissionTransactionArgumentException(string value)
+        {
+            // Arrange
+            DateTime testDate = new DateTime(2023, 1, 1);
+            string routedTo = "test@mail.net";
+            string routedFrom = value;
+            string comments = "These are test comments.";
+
+            // Act/Assert
+            Assert.Throws<SubmissionTransactionArgumentException>(() => new SubmissionTransaction(testDate, testDate, routedTo, routedFrom, comments));
         }
         [Fact]
         public void Given_Invalid_Comments_Throws_SubmissionTransactionArgumentException()
         {
             // Arrange
             DateTime testDate = new DateTime(2023, 1, 1);
-            TransactionStatus testStatus = TransactionStatus.Pending;
             string routedTo = "test@mail.net";
+            string routedFrom = "test2@mail.net";
             string comments = new string('a', 5001);
 
             // Act/Assert
-            Assert.Throws<SubmissionTransactionArgumentException>(() => new SubmissionTransaction(testDate, testDate, testStatus, routedTo, comments));
+            Assert.Throws<SubmissionTransactionArgumentException>(() => new SubmissionTransaction(testDate, testDate, routedTo, routedFrom, comments));
         }
     }
 }

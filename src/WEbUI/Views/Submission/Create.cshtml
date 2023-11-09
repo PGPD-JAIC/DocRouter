@@ -1,49 +1,49 @@
-﻿@{
+﻿@using DocRouter.Application.Submissions.Commands.CreateSubmission;
+@{
     ViewData["Title"] = "Create Submission";
 }
-@model SubmissionViewModel
+@model CreateSubmissionCommand
 <h4>DocRouter File Uploader</h4>
 <hr />
 <form method="post" enctype="multipart/form-data" asp-controller="Submission" asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @await Component.InvokeAsync("UserDriveList", new { selectedDriveId = Model.DriveId, DrivePropertyName = "DriveId" })
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="SubmissonName">Folder Name</label>
-            <input asp-for="Title" class="form-control" />
-            <span asp-validation-for="Title" class="text-danger"></span>
+            <label for="SubmissonName">Title</label>
+            <input asp-for="Title" class="form-control form-control-sm" />
+            <small asp-validation-for="Title" class="text-danger"></small>
         </div>
     </div>
     <div class="form-group">
         <label for="Description">Description:</label>
-        <textarea asp-for="Description" rows="3" cols="40" class="form-control"></textarea>
-        <span asp-validation-for="Description" class="text-danger"></span>
+        <textarea asp-for="Description" rows="3" cols="40" class="form-control form-control-sm"></textarea>
+        <small asp-validation-for="Description" class="text-danger"></small>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="Recipient">Submit to:</label>
-            <select asp-for="Recipient" asp-items="Model.Users" class="form-control">
-                <option value="">Select User</option>
-            </select>
-            <span asp-validation-for="Recipient" class="text-danger"></span>
+            @await Component.InvokeAsync("UserList", new { selectedId = Model.Recipient, PropertyName = "Recipient"})
+            <small asp-validation-for="Recipient" class="text-danger"></small>
         </div>
     </div>
     <div class="form-group">
         <label for="Comments">Comments:</label>
-        <textarea asp-for="Comments" rows="5" cols="40" class="form-control"></textarea>
-        <span asp-validation-for="Comments" class="text-danger"></span>
+        <textarea asp-for="Comments" rows="5" cols="40" class="form-control form-control-sm"></textarea>
+        <small asp-validation-for="Comments" class="text-danger"></small>
     </div>
     <div class="form-group">
-        <label for="Files" class="btn btn-primary">
+        <label for="Files" class="btn btn-sm btn-primary">
             <i class="fa fa-cloud-upload"></i> Select File(s)
         </label>
         <input asp-for="Files" type="file" multiple style="display: none;">
         <div id="submissions">
         </div>
-        <span asp-validation-for="Files" class="text-danger"></span>
+        <small asp-validation-for="Files" class="text-danger"></small>
     </div>
     <hr />
     <div class="form-group" id="submitGroup">
-        <button type="submit" id="submitButton" class="btn btn-success" value="Upload"><i class="fa fa-floppy-o" aria-hidden="true"></i> Create Submission</button>
+        <button type="submit" id="submitButton" class="btn btn-sm btn-success" value="Upload"><i class="fa fa-floppy-o" aria-hidden="true"></i> Create Submission</button>
     </div>
     <div class="form-group text-success" id="spinner" style="display:none">
         <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="vertical-align:middle"></i><strong> Uploading, please wait...</strong>
@@ -74,6 +74,9 @@
                 })
             });
             $("#Recipient").select2({
+                width: '100%'
+            });
+            $("#DriveId").select2({
                 width: '100%'
             });
             $("#submitButton").on("click", function(){

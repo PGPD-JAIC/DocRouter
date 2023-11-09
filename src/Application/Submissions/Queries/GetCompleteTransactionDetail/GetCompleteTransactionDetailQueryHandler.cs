@@ -26,7 +26,6 @@ namespace DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail
         /// <param name="context">An implementation of <see cref="IDocRouterContext"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
         /// <param name="mapper">An implementation of <see cref="IMapper"/></param>
-        /// <param name="userService">An implementation of <see cref="IUserService"/></param>
         public GetCompleteTransactionDetailQueryHandler(IDocRouterContext context, ILogger<GetCompleteTransactionDetailQueryHandler> logger, IMapper mapper)
         {
             _context = context;
@@ -41,6 +40,7 @@ namespace DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail
         /// <returns>A <see cref="RejectTransactionCommand"/> object.</returns>
         public async Task<CompleteTransactionCommand> Handle(GetCompleteTransactionDetailQuery request, CancellationToken cancellationToken)
         {
+            _logger.LogInformation("Attempting to retrieve transaction: {0} for completion.", request.TransactionId);
             var vm = await _context.Transactions
                 .Where(x => x.Id == request.TransactionId)
                 .ProjectTo<CompleteTransactionCommand>(_mapper.ConfigurationProvider)

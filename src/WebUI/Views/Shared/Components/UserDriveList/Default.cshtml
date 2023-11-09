@@ -1,0 +1,11 @@
+﻿@using DocRouter.WebUI.ViewComponents;
+@model UserDriveListViewComponentVm
+<div class="form-row">
+    <div class="form-group col-xs-12 col-sm-6">
+        <label for="@Model.DrivePropertyName">Drive</label>
+        <select asp-items="@Model.Drives" class="form-control form-control-sm" id="@Model.DrivePropertyName" name="@Model.DrivePropertyName">
+            <option value="">Select Drive</option>
+        </select>
+        <small asp-validation-for="@Model.DrivePropertyName" class="text-danger"></small>
+    </div>
+</div>

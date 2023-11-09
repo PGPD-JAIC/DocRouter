@@ -29,6 +29,7 @@ namespace DocRouter.Application.Submissions.Commands.ApproveTransaction
         /// <param name="dateTime">An implementation of <see cref="IDateTime"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
         /// <param name="mediator">An implementation of <see cref="IMediator"/></param>
+        /// <param name="currentUserService">An implementation of <see cref="ICurrentUserService"/></param>
         public ApproveTransactionCommandHandler(
             IDocRouterContext context,
             IDateTime dateTime,
@@ -62,9 +63,14 @@ namespace DocRouter.Application.Submissions.Commands.ApproveTransaction
             {
                 throw new NotFoundException($"No transaction found with id {command.TransactionId}", command.TransactionId);
             }
-            transactionToEdit.UpdateTransactionStatus(DocRouter.Common.Enums.TransactionStatus.Approved);
-            transactionToEdit.UpdateTransactionDate(_dateTime.Now, _dateTime.Now);
-            submission.AddTransaction(new SubmissionTransaction(_dateTime.Now, _dateTime.Now, DocRouter.Common.Enums.TransactionStatus.Pending, command.Recepient, command.NewComments));
+            transactionToEdit.Approve(_dateTime.Now);
+            submission.AddTransaction(new SubmissionTransaction(
+                _dateTime.Now, 
+                _dateTime.Now,  
+                command.Recepient, 
+                _currentUserService.Email, 
+                command.NewComments)
+                );
             await _context.SaveChangesAsync(cancellationToken);
             await _mediator.Publish(new TransactionApproved
             {

@@ -19,14 +19,22 @@ namespace DocRouter.Persistence.Configurations
             builder.Property(x => x.SubmissionId)
                 .HasField("_submissionId")
                 .IsRequired();
-            builder.Property(x => x.UniqueId)
-                .HasField("_uniqueId")
+            builder.Property(x => x.ItemId)
+                .HasField("_itemId")
                 .IsRequired()
                 .HasMaxLength(500);
             builder.Property(x => x.ItemUri)
                 .HasField("_itemUri")
                 .IsRequired()
                 .HasMaxLength(1000);
+            builder.Property(x => x.DriveId)
+                .HasField("_driveId")
+                .IsRequired()
+                .HasMaxLength(1000);
+            builder.Property(x => x.DisplayOrder)
+                .HasField("_displayOrder")
+                .IsRequired();
+                
         }
     }
 }

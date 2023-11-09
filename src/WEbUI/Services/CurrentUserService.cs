@@ -13,8 +13,9 @@ namespace DocRouter.WebUI.Services
         /// </summary>
         /// <param name="httpContextAccessor">An implementation of <see cref="IHttpContextAccessor"/></param>
         public CurrentUserService(IHttpContextAccessor httpContextAccessor)
-        {
-            UserId = httpContextAccessor.HttpContext?.User?.Identity.Name;
+        {   
+            Email = httpContextAccessor.HttpContext?.User.Identity.Name.Split('\\')[1] + "@co.pg.md.us";
+            UserId = httpContextAccessor.HttpContext?.User.Identity.Name;
             IsAuthenticated = UserId != null;
         }
         /// <summary>
@@ -25,5 +26,6 @@ namespace DocRouter.WebUI.Services
         /// Indicates whether the user is authenticated.
         /// </summary>
         public bool IsAuthenticated { get; }
+        public string Email { get; }
     }
 }

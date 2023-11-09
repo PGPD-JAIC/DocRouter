@@ -9,9 +9,14 @@
         /// The current User's Id
         /// </summary>
         string UserId { get; }
+        
         /// <summary>
         /// Whether the current user is authenticated.
         /// </summary>
         bool IsAuthenticated { get; }
+        /// <summary>
+        /// The user's email address.
+        /// </summary>
+        public string Email { get; }
     }
 }

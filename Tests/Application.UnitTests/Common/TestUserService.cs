@@ -28,5 +28,15 @@ namespace DocRouter.Application.UnitTests.Common
                 }
             });
         }
+
+        public Task<List<Directory>> GetUserDirectoriesByEmail(string email)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<DirectoryUser> GetUserIdByEmail(string email)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

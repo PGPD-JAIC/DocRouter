@@ -33,6 +33,10 @@ namespace DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail
         /// </summary>
         public string NewRoutedTo { get; set; }
         /// <summary>
+        /// The comments provided by the current reviewer.
+        /// </summary>
+        public string Comments { get; set; }
+        /// <summary>
         /// A list of files to add to the submission.
         /// </summary>
         public List<FileSubmissionDto> FilesToAdd { get; set; } = new List<FileSubmissionDto>();
@@ -54,7 +58,7 @@ namespace DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail
                 .ForMember(x => x.Id, opt => opt.MapFrom(c => c.Id))
                 .ForMember(x => x.Title, opt => opt.MapFrom(c => c.Title))
                 .ForMember(x => x.Description, opt => opt.MapFrom(c => c.Description))
-                .ForMember(x => x.CurrentlyRoutedTo, opt => opt.MapFrom(c => c.Transactions.OrderByDescending(t => t.TransactionDate).First().RoutedTo))
+                .ForMember(x => x.CurrentlyRoutedTo, opt => opt.MapFrom(c => c.Transactions.OrderByDescending(t => t.Created).First().RoutedTo))
                 .ForMember(x => x.CurrentFiles, opt => opt.MapFrom(c => c.Items));
         }
     }

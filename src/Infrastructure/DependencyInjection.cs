@@ -26,7 +26,7 @@ namespace DocRouter.Infrastructure
                 ApplicationBaseUrl = configuration["EmailSettings:ApplicationBaseUrl"]
             };
             services.AddSingleton(emailSettings);
-            var azureAdSettings = new AzureAD
+            var azureAdSettings = new AzureADSettings
             {
                 ClientId = configuration["AzureAD:ClientId"],
                 TenantId = configuration["AzureAD:TenantId"],

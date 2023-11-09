@@ -1,0 +1,5 @@
+﻿@using DocRouter.WebUI.ViewComponents;
+@model UserListVm
+<select asp-items="@Model.Users" class="form-control form-control-sm" id="@Model.PropertyName" name="@Model.PropertyName">
+    <option value="">Select User</option>
+</select>

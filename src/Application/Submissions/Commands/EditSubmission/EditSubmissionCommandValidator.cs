@@ -8,6 +8,9 @@ namespace DocRouter.Application.Submissions.Commands.EditSubmission
     /// </summary>
     public class EditSubmissionCommandValidator : AbstractValidator<EditSubmissionCommand>
     {
+        /// <summary>
+        /// Creates a new instance of the validator.
+        /// </summary>
         public EditSubmissionCommandValidator()
         {
             RuleFor(x => x.Title)

@@ -29,6 +29,10 @@ namespace DocRouter.Application.Submissions
         /// </summary>
         public string FolderPath { get; set; }
         /// <summary>
+        /// The unique Id of the submission.
+        /// </summary>
+        public string ItemId { get; set; }
+        /// <summary>
         /// The date the submission was created.
         /// </summary>
         public DateTime DateCreated { get; set; }
@@ -67,6 +71,7 @@ namespace DocRouter.Application.Submissions
                 .ForMember(x => x.Title, opt => opt.MapFrom(c => c.Title))
                 .ForMember(x => x.Description, opt => opt.MapFrom(c => c.Description))
                 .ForMember(x => x.FolderPath, opt => opt.MapFrom(c => c.FolderUri))
+                .ForMember(x => x.ItemId, opt => opt.MapFrom(c => c.ItemId))
                 .ForMember(x => x.DateCreated, opt => opt.MapFrom(c => c.Created))
                 .ForMember(x => x.CurrentStatus, opt => opt.MapFrom(c => c.Transactions.OrderByDescending(y => y.Created).First().Status))
                 .ForMember(x => x.RoutedTo, opt => opt.MapFrom(c => c.Transactions.OrderByDescending(y => y.Created).First().RoutedTo))

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Collections.Generic;
-
+using System.Reflection.PortableExecutable;
 
 namespace DocRouter.WebUI.TagHelpers
 {
@@ -95,6 +95,8 @@ namespace DocRouter.WebUI.TagHelpers
         /// The page class selected.
         /// </value>
         public string PageClassSelected { get; set; }
+        public string PageSuffix { get; set; }
+
 
         /// <summary>
         /// Synchronously executes the <see cref="TagHelper" /> with the given <paramref name="context" /> and
@@ -108,6 +110,7 @@ namespace DocRouter.WebUI.TagHelpers
             TagBuilder result = new TagBuilder("ul");
             result.AddCssClass("pagination");
             result.AddCssClass("pagination-sm");
+            result.AddCssClass("mb-0");
             if (PageModel.TotalPages < 10)
             {
                 for (int i = 1; i <= PageModel.TotalPages; i++)
@@ -115,8 +118,8 @@ namespace DocRouter.WebUI.TagHelpers
                     TagBuilder liTag = new TagBuilder("li");
                     TagBuilder tag = new TagBuilder("a");
                     tag.AddCssClass("page-link");
-                    PageUrlValues["pageNumber"] = i;
-                    tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                    PageUrlValues[$"{PageModel.ModelModifier}pageNumber"] = i;
+                    tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues) + $"#{PageSuffix}";
                     if (PageClassesEnabled)
                     {
                         liTag.AddCssClass(PageClass);
@@ -144,7 +147,7 @@ namespace DocRouter.WebUI.TagHelpers
                 else
                 {
                     PageUrlValues["pageNumber"] = 1;
-                    firstTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                    firstTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues) + $"#{PageSuffix}";
                 }
                 firstTag.InnerHtml.AppendHtml(firstFaTag);
                 firstLiTag.InnerHtml.AppendHtml(firstTag);
@@ -164,7 +167,7 @@ namespace DocRouter.WebUI.TagHelpers
                 else
                 {
                     PageUrlValues["pageNumber"] = PageModel.CurrentPage - 1;
-                    backTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                    backTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues) + $"#{PageSuffix}"; ;
                 }
                 backTag.InnerHtml.AppendHtml(faTag);
                 backLiTag.InnerHtml.AppendHtml(backTag);
@@ -183,7 +186,7 @@ namespace DocRouter.WebUI.TagHelpers
                     TagBuilder tag = new TagBuilder("a");
                     tag.AddCssClass("page-link");
                     PageUrlValues["pageNumber"] = i;
-                    tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                    tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues) + $"#{PageSuffix}"; 
                     if (PageClassesEnabled)
                     {
                         liTag.AddCssClass(PageClass);
@@ -208,7 +211,7 @@ namespace DocRouter.WebUI.TagHelpers
                 else
                 {
                     PageUrlValues["pageNumber"] = PageModel.CurrentPage + 1;
-                    nextTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                    nextTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues) + $"#{PageSuffix}"; 
                 }
                 nextTag.InnerHtml.AppendHtml(nextFaTag);
                 nextLiTag.InnerHtml.AppendHtml(nextTag);
@@ -228,7 +231,7 @@ namespace DocRouter.WebUI.TagHelpers
                 else
                 {
                     PageUrlValues["pageNumber"] = PageModel.TotalPages;
-                    lastTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                    lastTag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues) + $"#{PageSuffix}";
                 }
                 lastTag.InnerHtml.AppendHtml(lastFaTag);
                 lastLiTag.InnerHtml.AppendHtml(lastTag);
@@ -240,3 +243,4 @@ namespace DocRouter.WebUI.TagHelpers
         }
     }
 }
+

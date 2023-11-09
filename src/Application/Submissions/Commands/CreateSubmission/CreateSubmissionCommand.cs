@@ -26,6 +26,14 @@ namespace DocRouter.Application.Submissions.Commands.CreateSubmission
         /// </summary>
         public string Comments { get; set; } = "";
         /// <summary>
+        /// A string containing the Id of the drive.
+        /// </summary>
+        public string DriveId { get; set; } = "b!j3sReZftLkuOgOZFHws5jx8M56sz-i9IkpjRrPkNncnrKJubNalgR6RgYT57FY72,013TPQOTV6Y2GOVW7725BZO354PWSELRRZ"; // TODO: remove hard-coded DriveId
+        /// <summary>
+        /// A string containing the Id of the list.
+        /// </summary>
+        public string ListId { get; set; }
+        /// <summary>
         /// A list of files.
         /// </summary>
         public List<FileSubmissionDto> Files { get; set; }

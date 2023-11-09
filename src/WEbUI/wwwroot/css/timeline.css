@@ -3,6 +3,7 @@
     --approved: #65aee0;
     --complete: #28a745;
     --rejected: #d26759;
+    --recalled: #d26759;
 }
 
 .tracking-detail {
@@ -22,7 +23,7 @@
 }
 
 [class*=tracking-status-] {
-    padding: 1.6rem 0
+    padding: 0.6rem 0
 }
 
 .tracking-status-Approved {
@@ -39,6 +40,9 @@
 
 .tracking-status-Rejected {
     background-color: var(--rejected);
+}
+.tracking-status-Rejected {
+    background-color: var(--recalled);
 }
 
 .tracking-list {
@@ -121,7 +125,11 @@
             border: 1px solid var(--rejected);
             font-size: .6rem
         }
-
+        .tracking-item .tracking-icon.status-Recalled {
+            color: var(--recalled);
+            border: 1px solid var(--recalled);
+            font-size: .6rem
+        }
 @media(min-width:992px) {
     .tracking-item {
         margin-left: 10rem

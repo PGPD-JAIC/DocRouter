@@ -1,19 +1,16 @@
-﻿using DocRouter.Application.Submissions.Commands.DeleteSubmission;
-using DocRouter.Application.Submissions.Queries.GetADUserList;
+﻿using DocRouter.Application.Submissions.Commands.CreateSubmission;
+using DocRouter.Application.Submissions.Commands.DeleteSubmission;
 using DocRouter.Application.Submissions.Queries.GetAllSubmissions;
 using DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail;
+using DocRouter.Application.Submissions.Queries.GetCombinedFile;
 using DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail;
-using DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail;
+using DocRouter.Application.Submissions.Queries.GetFile;
 using DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail;
 using DocRouter.Application.Submissions.Queries.GetSubmissionDetail;
 using DocRouter.Application.Submissions.Queries.GetSubmissionUsers;
-using DocRouter.WebUI.Models;
+using DocRouter.Application.Users.Queries.GetADUserList;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport;
-using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.Item.Return;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DocRouter.WebUI.Controllers
@@ -37,28 +34,19 @@ namespace DocRouter.WebUI.Controllers
             return View(await Mediator.Send(request));
         }
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            var users = await Mediator.Send(new GetADUserListQuery());
-            SubmissionViewModel vm =
-                new SubmissionViewModel()
-                {
-                    Users = users.Users.Select(x => new SelectListItem { Text = x.Name, Value = x.Email }).ToList()
-                };
-
-            return View(vm);
+            return View(new CreateSubmissionCommand());
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([FromForm] SubmissionViewModel form)
+        public async Task<IActionResult> Create([FromForm] CreateSubmissionCommand form)
         {
             if (!ModelState.IsValid)
             {
-                var users = await Mediator.Send(new GetADUserListQuery());
-                form.Users = users.Users.Select(x => new SelectListItem { Text = x.Name, Value = x.Email }).ToList();
                 return View(form);
             }
-            var result = await Mediator.Send(form.CreateSubmissionCommand());
+            var result = await Mediator.Send(form);
             TempData["Message"] = result.Message;
             return RedirectToAction("Success");
         }
@@ -143,7 +131,7 @@ namespace DocRouter.WebUI.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
-        public async Task<IActionResult> Delete([FromQuery] GetDeleteSubmissionDetailQuery request, [FromQuery] string returnUrl)
+        public async Task<IActionResult> Delete([FromQuery] GetSubmissionDetailQuery request, [FromQuery] string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
             return View(await Mediator.Send(request));
@@ -161,6 +149,18 @@ namespace DocRouter.WebUI.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
+        }
+        [HttpGet]
+        public async Task<IActionResult> DownloadAsPdf([FromRoute] GetFileQuery request)
+        {
+            var vm = await Mediator.Send(request);
+            return File(vm.Content, vm.ContentType, vm.FileName);
+        }
+        [HttpGet]
+        public async Task<IActionResult> DownloadCombinedPdf([FromRoute] GetCombinedFileQuery request)
+        {
+            var vm = await Mediator.Send(request);
+            return File(vm.Content, vm.ContentType, vm.FileName);
         }
     }
 }

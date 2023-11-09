@@ -1,13 +1,10 @@
 ﻿using DocRouter.Application.Common.Interfaces;
 using DocRouter.Application.Common.Models;
-using DocRouter.Application.Submissions.Commands.ApproveTransaction;
 using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace DocRouter.Application.Submissions.Commands.CompleteTransaction
 {
@@ -36,6 +33,9 @@ namespace DocRouter.Application.Submissions.Commands.CompleteTransaction
         /// The title of the submission.
         /// </summary>
         public string SubmissionTitle { get; set; }
+        /// <summary>
+        /// Handles the request.
+        /// </summary>
         public class TransactionCompletedHandler : INotificationHandler<TransactionCompleted>
         {
             private readonly INotificationService _notificationService;
@@ -59,9 +59,7 @@ namespace DocRouter.Application.Submissions.Commands.CompleteTransaction
                 {
                     new MessageDto
                     {
-                        //TODO: Remove manual address used in testing
-                        // To = notification.SubmittedBy,
-                        To = "jcsmith1@co.pg.md.us",
+                        To = notification.SubmittedBy,
                         From = "DocRouter",
                         Subject = $"{notification.SubmissionTitle} is Complete.",
                         Body = $"<p>The submission you forwarded was completed. You can view the documents <a href=\"{notification.SubmissionUri}\">here</a></p>",

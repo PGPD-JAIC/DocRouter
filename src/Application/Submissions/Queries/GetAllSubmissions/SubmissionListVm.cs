@@ -13,7 +13,13 @@ namespace DocRouter.Application.Submissions.Queries.GetAllSubmissions
         /// A list of <see cref="SubmissionListSubmissionDto"/>
         /// </summary>
         public ICollection<SubmissionListSubmissionDto> Submissions { get; set; }
+        /// <summary>
+        /// A list of user names.
+        /// </summary>
         public List<string> SubmittingUsers { get; set; }
+        /// <summary>
+        /// A list of user names.
+        /// </summary>
         public List<string> RoutedToUsers { get; set; }
         /// <summary>
         /// A string containing the search filter used against the submittedby field.

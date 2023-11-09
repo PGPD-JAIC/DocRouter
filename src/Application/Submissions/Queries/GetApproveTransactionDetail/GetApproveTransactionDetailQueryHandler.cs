@@ -25,7 +25,6 @@ namespace DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail
         /// <param name="context">An implementation of <see cref="IDocRouterContext"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
         /// <param name="mapper">An implementation of <see cref="IMapper"/></param>
-        /// <param name="userService">An implementation of <see cref="IUserService"/></param>
         public GetApproveTransactionDetailQueryHandler(IDocRouterContext context, ILogger<GetApproveTransactionDetailQueryHandler> logger, IMapper mapper)
         {
             _context = context;
@@ -41,6 +40,7 @@ namespace DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail
         /// <returns>A <see cref="ApproveTransactionCommand"/> object.</returns>
         public async Task<ApproveTransactionCommand> Handle(GetApproveTransactionDetailQuery request, CancellationToken cancellationToken)
         {
+            _logger.LogInformation("Attempting to retrieve transaction: {0} for approval", request.TransactionId);
             var vm = await _context.Transactions
                 .Where(x => x.Id == request.TransactionId)
                 .ProjectTo<ApproveTransactionCommand>(_mapper.ConfigurationProvider)

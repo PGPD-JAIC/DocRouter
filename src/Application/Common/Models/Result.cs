@@ -8,6 +8,12 @@ namespace DocRouter.Application.Common.Models
     /// </summary>
     public class Result
     {
+        /// <summary>
+        /// Creates a new instance of the class.
+        /// </summary>
+        /// <param name="succeeded">A boolean indicating whether the operation succeeded.</param>
+        /// <param name="message">A string containing a message.</param>
+        /// <param name="errors">A list of any errors returned by the operation.</param>
         public Result(bool succeeded, string message, IEnumerable<string> errors)
         {
             Succeeded = succeeded;
@@ -34,6 +40,11 @@ namespace DocRouter.Application.Common.Models
         {
             return new Result(true, "", new string[] { });
         }
+        /// <summary>
+        /// Success result with message.
+        /// </summary>
+        /// <param name="message">A string containing a message.</param>
+        /// <returns></returns>
         public static Result Success(string message)
         {
             return new Result(true, message, new string[] { });

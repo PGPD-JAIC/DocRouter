@@ -39,6 +39,10 @@ namespace DocRouter.Persistence.Migrations
                         .HasColumnType("nvarchar(1000)")
                         .HasMaxLength(1000);
 
+                    b.Property<string>("DriveId")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<DateTime?>("Edited")
                         .HasColumnType("datetime2");
 
@@ -50,14 +54,18 @@ namespace DocRouter.Persistence.Migrations
                         .HasColumnType("nvarchar(500)")
                         .HasMaxLength(500);
 
+                    b.Property<string>("ItemId")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("ListId")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
-
-                    b.Property<string>("UniqueId")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
 
                     b.HasKey("Id");
 
@@ -79,11 +87,24 @@ namespace DocRouter.Persistence.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DriveId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
+
                     b.Property<DateTime?>("Edited")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EditedBy")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
 
                     b.Property<string>("ItemName")
                         .IsRequired()
@@ -97,11 +118,6 @@ namespace DocRouter.Persistence.Migrations
 
                     b.Property<int>("SubmissionId")
                         .HasColumnType("int");
-
-                    b.Property<string>("UniqueId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
 
                     b.HasKey("Id");
 
@@ -136,6 +152,14 @@ namespace DocRouter.Persistence.Migrations
                     b.Property<string>("EditedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("ResponseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RoutedFrom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("RoutedTo")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -148,7 +172,7 @@ namespace DocRouter.Persistence.Migrations
                     b.Property<int>("SubmissionId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("TransactionDate")
+                    b.Property<DateTime>("SubmitDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

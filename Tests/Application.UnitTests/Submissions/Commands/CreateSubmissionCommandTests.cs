@@ -18,7 +18,12 @@ namespace DocRouter.Application.UnitTests.Submissions.Commands
         public CreateSubmissionCommandTests(): base()
         {
             _mediatorMock = new Mock<IMediator>();
-            _sut = new CreateSubmissionCommandHandler(_context, _fileService, _dateTime, new NullLogger<CreateSubmissionCommandHandler>(), _mediatorMock.Object);
+            _sut = new CreateSubmissionCommandHandler(
+                _context, 
+                _fileService, 
+                _dateTime, new NullLogger<CreateSubmissionCommandHandler>(), 
+                _mediatorMock.Object, new CurrentUserServiceTesting()
+                );
         }
         [Fact]
         public async Task Handle_Given_Valid_Request_Should_Raise_SubmissionCreatedNotification()

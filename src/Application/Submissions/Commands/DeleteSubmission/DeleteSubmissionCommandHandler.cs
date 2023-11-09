@@ -57,7 +57,7 @@ namespace DocRouter.Application.Submissions.Commands.DeleteSubmission
             }
             try
             {
-                await _fileStorageService.DeleteDirectoryAsync(toDelete.UniqueId);
+                await _fileStorageService.DeleteDirectoryAsync(toDelete);
                 _context.Submissions.Remove(toDelete);
                 await _context.SaveChangesAsync(cancellationToken);
             }

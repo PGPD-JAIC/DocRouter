@@ -113,8 +113,10 @@ namespace DocRouter.WebUI
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseExceptionHandler("/error-local-development");
+                //app.UseDeveloperExceptionPage();
+                //app.UseExceptionHandler("/error-local-development");
+                app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
+                //app.UseCustomExceptionHandler();
                 RegisteredServicesPage(app);
             }
             else

@@ -1,5 +1,6 @@
 ﻿using DocRouter.Application.Common.Interfaces;
 using DocRouter.Application.Common.Models;
+using DocRouter.Domain.Entities;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -9,24 +10,35 @@ namespace DocRouter.Application.UnitTests.Common
     public class TestFileService : IFileStorageService
     {
         private static readonly string _rootPath = @"C:\DocRouter";
-        public Task<FileResult> AddFileToDirectoryAsync(string directoryName, FileSubmissionDto file)
+
+        public Task<SubmissionItem> AddFileToDirectoryAsync(Submission submission, FileSubmissionDto file)
         {
-            return Task.Run(() => (new FileResult { Uri = Path.Combine(directoryName, file.FileName) }));
+            throw new NotImplementedException();
         }
 
-        public Task<DirectoryResult> CreateDirectoryAsync(string submittedByEmail, string submittedToEmail)
+        public Task<Submission> CreateDirectoryAsync(Submission submission)
         {
-            Guid newGUID = Guid.NewGuid();
-            return Task.Run(() => (new DirectoryResult { Uri = Path.Combine(_rootPath, newGUID.ToString()) }));
-        }
-        public Task DeleteDirectoryAsync(string directoryId)
-        {
-            return Task.CompletedTask;
+            throw new NotImplementedException();
         }
 
-        public Task DeleteFileAsync(string fileId)
+        public Task DeleteDirectoryAsync(Submission submission)
         {
-            return Task.CompletedTask;
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteFileAsync(SubmissionItem file)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<FileSubmissionDto> DownloadCombinedPdfFile(Submission submission)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<FileSubmissionDto> DownloadFileAsPdfAsync(SubmissionItem file)
+        {
+            throw new NotImplementedException();
         }
     }
 }

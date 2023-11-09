@@ -20,18 +20,15 @@ namespace DocRouter.Application.Submissions.Queries.GetSubmissionUsers
     {
         private readonly IDocRouterContext _context;
         private readonly ILogger _logger;
-        private readonly IMapper _mapper;
         /// <summary>
         /// Creates a new instance of the class.
         /// </summary>
         /// <param name="context">An implementation of <see cref="IDocRouterContext"/></param>
         /// <param name="logger">An implementation of <see cref="ILogger"/></param>
-        /// <param name="mediator">An implementation of <see cref="IMediator"/></param>
-        public GetSubmissionUsersQueryHandler(IDocRouterContext context, ILogger<GetSubmissionDetailQueryHandler> logger, IMapper mapper)
+        public GetSubmissionUsersQueryHandler(IDocRouterContext context, ILogger<GetSubmissionDetailQueryHandler> logger)
         {
             _context = context;
             _logger = logger;
-            _mapper = mapper;
         }
         /// <summary>
         /// Handles the request.
@@ -50,7 +47,8 @@ namespace DocRouter.Application.Submissions.Queries.GetSubmissionUsers
                 .FirstOrDefaultAsync();
             if (submissionId == null)
             {
-                throw new NotFoundException($"No entity with Id {request.TransactionId} was found.", request.TransactionId);
+                _logger.LogError("No submission containing transaction with id: {0} was found.", request.TransactionId);
+                throw new NotFoundException("No entity was found.", request.TransactionId);
             }
             var result = await _context.Submissions
                 .Where(x => x.Id == submissionId)
@@ -58,7 +56,8 @@ namespace DocRouter.Application.Submissions.Queries.GetSubmissionUsers
                 .ToListAsync();
             if (result == null)
             {
-                throw new NotFoundException($"No entity with Id {submissionId} was found.", submissionId);
+                _logger.LogError("No submission with id: {0} was found.", submissionId);
+                throw new NotFoundException("No entity with Id {0} was found.", submissionId);
             }
             return result;
         }

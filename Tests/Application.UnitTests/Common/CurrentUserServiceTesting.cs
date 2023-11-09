@@ -13,8 +13,10 @@ namespace DocRouter.Application.UnitTests.Common
         {
             UserId = LDAPName;
             IsAuthenticated = true;
+            Email = LDAPName + "@TEST.co.pg.md.us";
         }
         public string UserId { get; private set; }
         public bool IsAuthenticated { get; private set; }
+        public string Email { get; private set; }
     }
 }

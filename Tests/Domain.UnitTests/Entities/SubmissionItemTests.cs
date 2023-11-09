@@ -13,13 +13,18 @@ namespace DocRouter.Domain.UnitTests.Entities
             // Arrange
             var name = "Test Item #1";
             var path = @"C:\DocRouter\Test\Test Item #1";
+            var itemId = "12345ABCDE";
+            var driveId = "67890FGHIJ";
 
             // Act
-            var toTest = new SubmissionItem(name, path);
+            var toTest = new SubmissionItem(name, path, itemId, driveId);
 
             // Assert
             toTest.ItemName.ShouldBe(name);
             toTest.ItemUri.ShouldBe(path);
+            toTest.ItemId.ShouldBe(itemId);
+            toTest.DriveId.ShouldBe(driveId);
+                
         }
         [Theory]
         [InlineData("")]
@@ -29,9 +34,11 @@ namespace DocRouter.Domain.UnitTests.Entities
             // Arrange
             var name = value;
             var path = @"C:\DocRouter\Test\Test Item #1";
+            var itemId = "12345ABCDE";
+            var driveId = "67890FGHIJ";
 
             // Act/Assert
-            Assert.Throws<SubmissionItemArgumentException>(() => new SubmissionItem(name, path));
+            Assert.Throws<SubmissionItemArgumentException>(() => new SubmissionItem(name, path, itemId, driveId));
         }
         [Theory]
         [InlineData("")]
@@ -53,9 +60,11 @@ namespace DocRouter.Domain.UnitTests.Entities
             // Arrange
             var name = "Test Item #1";
             var path = value;
+            var itemId = "12345ABCDE";
+            var driveId = "67890FGHIJ";
 
             // Act/Assert
-            Assert.Throws<SubmissionItemArgumentException>(() => new SubmissionItem(name, path));
+            Assert.Throws<SubmissionItemArgumentException>(() => new SubmissionItem(name, path, itemId, driveId));
         }
     }
 }

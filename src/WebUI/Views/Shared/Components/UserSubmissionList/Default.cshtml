@@ -1,0 +1,61 @@
+﻿@model UserSubmissionListVm;
+@using DocRouter.Application.Submissions.Queries.GetUserSubmissions;
+
+@if (Model.SubmittedTo.Count() > 0)
+{
+    <div class="table-responsive-sm">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th colspan="7">
+                        <small>@Model.SubmittedToPagingInfo.Caption</small>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (UserSubmissionListSubmissionDto submission in Model.SubmittedTo)
+                {
+                    <tr>
+                        <td>
+                            @submission.Title
+                        </td>
+                        <td>
+                            @submission.DateCreated.ToShortDateString()
+                        </td>
+                        <td>
+                            <a href="@submission.FolderPath" target="_blank">Open Folder</a>
+                        </td>
+                        <td>
+                            @submission.Files
+                        </td>
+                        <td>
+                            @submission.CurrentStatus
+                        </td>
+                        <td>
+                            @submission.CurrentlyRoutedTo
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@submission.Id" asp-route-returnUrl="/Submission/Index@(!String.IsNullOrEmpty(Context.Request.QueryString.ToString()) ? $"{Context.Request.QueryString}" : "")" title="View Details">
+                                <i class="fa fa-info" aria-hidden="true"></i> Details
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="table-responsive-sm">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th colspan="7" style="color:darkgreen">
+                        No Submissions Found
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+}
