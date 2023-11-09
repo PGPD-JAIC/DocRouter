@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AzureADFileStorageService
+   | DocRouter Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AzureADFileStorageService
+   | DocRouter Documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService">
+  
+  
+  <h1 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService" class="text-break">Class AzureADFileStorageService
+  </h1>
+  <div class="markdown level0 summary"><p>Implementation of <a class="xref" href="../Application/DocRouter.Application.Common.Interfaces.IFileStorageService.html">IFileStorageService</a> that interacts with files stored in Azure/Sharepoint.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AzureADFileStorageService</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="../Application/DocRouter.Application.Common.Interfaces.IFileStorageService.html">IFileStorageService</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DocRouter.Infrastructure.Azure.html">DocRouter.Infrastructure.Azure</a></h6>
+  <h6><strong>Assembly</strong>: DocRouter.Infrastructure.dll</h6>
+  <h5 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AzureADFileStorageService : object, IFileStorageService</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService__ctor_DocRouter_Infrastructure_Azure_AzureADSettings_ILogger_DocRouter_Infrastructure_Azure_AzureADFileStorageService__.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService.%23ctor(DocRouter.Infrastructure.Azure.AzureADSettings%2CILogger%7BDocRouter.Infrastructure.Azure.AzureADFileStorageService%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L34">View Source</a>
+  </span>
+  <a id="DocRouter_Infrastructure_Azure_AzureADFileStorageService__ctor_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.#ctor*"></a>
+  <h4 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService__ctor_DocRouter_Infrastructure_Azure_AzureADSettings_ILogger_DocRouter_Infrastructure_Azure_AzureADFileStorageService__" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.#ctor(DocRouter.Infrastructure.Azure.AzureADSettings,ILogger{DocRouter.Infrastructure.Azure.AzureADFileStorageService})">AzureADFileStorageService(AzureADSettings, ILogger&lt;AzureADFileStorageService&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance of the class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AzureADFileStorageService(AzureADSettings settings, ILogger&lt;AzureADFileStorageService&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DocRouter.Infrastructure.Azure.AzureADSettings.html">AzureADSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>A <a class="xref" href="DocRouter.Infrastructure.Azure.AzureADSettings.html">AzureADSettings</a> object that contains configuration details for the targeted Azure deployment.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ILogger</span>&lt;<a class="xref" href="DocRouter.Infrastructure.Azure.AzureADFileStorageService.html">AzureADFileStorageService</a>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>An implementation of <see cref="!:ILogger&lt;AzureADFileStorageService>"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService_AddFileToDirectoryAsync_Submission_DocRouter_Application_Common_Models_FileSubmissionDto_.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService.AddFileToDirectoryAsync(Submission%2CDocRouter.Application.Common.Models.FileSubmissionDto)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L139">View Source</a>
+  </span>
+  <a id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_AddFileToDirectoryAsync_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.AddFileToDirectoryAsync*"></a>
+  <h4 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_AddFileToDirectoryAsync_Submission_DocRouter_Application_Common_Models_FileSubmissionDto_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.AddFileToDirectoryAsync(Submission,DocRouter.Application.Common.Models.FileSubmissionDto)">AddFileToDirectoryAsync(Submission, FileSubmissionDto)</h4>
+  <div class="markdown level1 summary"><p>Adds a new file to an existing directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;SubmissionItem&gt; AddFileToDirectoryAsync(Submission submission, FileSubmissionDto file)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Submission</span></td>
+        <td><span class="parametername">submission</span></td>
+        <td><p>A <see cref="!:Submission"></see> object representing the target folder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Application/DocRouter.Application.Common.Models.FileSubmissionDto.html">FileSubmissionDto</a></td>
+        <td><span class="parametername">file</span></td>
+        <td><p>A <a class="xref" href="../Application/DocRouter.Application.Common.Models.FileSubmissionDto.html">FileSubmissionDto</a> object containing the details of the file to upload.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">SubmissionItem</span>&gt;</td>
+        <td><p>A <see cref="!:SubmissionItem"></see> object containing details of the uploaded file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService_CreateDirectoryAsync_Submission_.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService.CreateDirectoryAsync(Submission)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L73">View Source</a>
+  </span>
+  <a id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_CreateDirectoryAsync_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.CreateDirectoryAsync*"></a>
+  <h4 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_CreateDirectoryAsync_Submission_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.CreateDirectoryAsync(Submission)">CreateDirectoryAsync(Submission)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Directory in the provided Drive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;Submission&gt; CreateDirectoryAsync(Submission submission)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Submission</span></td>
+        <td><span class="parametername">submission</span></td>
+        <td><p>The <see cref="!:Submission"></see> item to be added to the Document Library.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">Submission</span>&gt;</td>
+        <td><p>A <see cref="!:Submission"></see> object with the relevant fields from the MSGraph action populated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_CreateDirectoryAsync_Submission__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The following fields of the <code data-dev-comment-type="paramref" class="paramref">submission</code> are required to create a directory:</p>
+<ul><li>Submission.TitleUsed as the title of the folder created in the document library.</li><li>Submission.Transactions[0].RoutedToUsed to set access permissions on the DriveItem.</li><li>Submission.Transactions[0].RoutedFromUsed to set access permissions on the DriveItem.</li><li>Submission.DriveIdRequired for the API call.</li><li>Submission.ListIdRequired for the API call.</li></ul>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService_DeleteDirectoryAsync_Submission_.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService.DeleteDirectoryAsync(Submission)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L201">View Source</a>
+  </span>
+  <a id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DeleteDirectoryAsync_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DeleteDirectoryAsync*"></a>
+  <h4 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DeleteDirectoryAsync_Submission_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DeleteDirectoryAsync(Submission)">DeleteDirectoryAsync(Submission)</h4>
+  <div class="markdown level1 summary"><p>Deletes a directory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task DeleteDirectoryAsync(Submission submission)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Submission</span></td>
+        <td><span class="parametername">submission</span></td>
+        <td><p>The <see cref="!:Submission"></see> representing the directory to be deleted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService_DeleteFileAsync_SubmissionItem_.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService.DeleteFileAsync(SubmissionItem)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L219">View Source</a>
+  </span>
+  <a id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DeleteFileAsync_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DeleteFileAsync*"></a>
+  <h4 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DeleteFileAsync_SubmissionItem_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DeleteFileAsync(SubmissionItem)">DeleteFileAsync(SubmissionItem)</h4>
+  <div class="markdown level1 summary"><p>Deletes an item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task DeleteFileAsync(SubmissionItem toDelete)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SubmissionItem</span></td>
+        <td><span class="parametername">toDelete</span></td>
+        <td><p>The <see cref="!:SubmissionItem"></see> to be deleted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService_DownloadCombinedPdfFile_Submission_.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService.DownloadCombinedPdfFile(Submission)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L261">View Source</a>
+  </span>
+  <a id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DownloadCombinedPdfFile_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DownloadCombinedPdfFile*"></a>
+  <h4 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DownloadCombinedPdfFile_Submission_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DownloadCombinedPdfFile(Submission)">DownloadCombinedPdfFile(Submission)</h4>
+  <div class="markdown level1 summary"><p>Downloads all documents in a folder into a single .pdf.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;FileSubmissionDto&gt; DownloadCombinedPdfFile(Submission submission)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Submission</span></td>
+        <td><span class="parametername">submission</span></td>
+        <td><p>The <see cref="!:Submission"></see> containing the files.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="../Application/DocRouter.Application.Common.Models.FileSubmissionDto.html">FileSubmissionDto</a>&gt;</td>
+        <td><p>A <a class="xref" href="../Application/DocRouter.Application.Common.Models.FileSubmissionDto.html">FileSubmissionDto</a> containing the combined file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService_DownloadFileAsPdfAsync_SubmissionItem_.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService.DownloadFileAsPdfAsync(SubmissionItem)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L236">View Source</a>
+  </span>
+  <a id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DownloadFileAsPdfAsync_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DownloadFileAsPdfAsync*"></a>
+  <h4 id="DocRouter_Infrastructure_Azure_AzureADFileStorageService_DownloadFileAsPdfAsync_SubmissionItem_" data-uid="DocRouter.Infrastructure.Azure.AzureADFileStorageService.DownloadFileAsPdfAsync(SubmissionItem)">DownloadFileAsPdfAsync(SubmissionItem)</h4>
+  <div class="markdown level1 summary"><p>Downloads a file as a pdf.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;FileSubmissionDto&gt; DownloadFileAsPdfAsync(SubmissionItem file)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SubmissionItem</span></td>
+        <td><span class="parametername">file</span></td>
+        <td><p>The <see cref="!:SubmissionItem"></see> representing the file to be downloaded.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="../Application/DocRouter.Application.Common.Models.FileSubmissionDto.html">FileSubmissionDto</a>&gt;</td>
+        <td><p>A <a class="xref" href="../Application/DocRouter.Application.Common.Models.FileSubmissionDto.html">FileSubmissionDto</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="../Application/DocRouter.Application.Common.Interfaces.IFileStorageService.html">IFileStorageService</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PGPD-JAIC/DocRouter/new/master/apiSpec/new?filename=DocRouter_Infrastructure_Azure_AzureADFileStorageService.md&amp;value=---%0Auid%3A%20DocRouter.Infrastructure.Azure.AzureADFileStorageService%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PGPD-JAIC/DocRouter/blob/master/src/Infrastructure/Azure/AzureADFileStorageService.cs/#L25" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

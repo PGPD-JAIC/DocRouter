@@ -1,0 +1,2696 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/DocRouter/DocRouter/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestAuthorizationBehavior-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestAuthorizationBehavior-2.html",
+          "hash": "3Xuj9TrljagaepBMASfH6CTN0HhQRUHKaD5tgpXIwEU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestLogger-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestLogger-1.html",
+          "hash": "GfuXzpjyPSKnSAW2QlLxZspcGKSPqNs0pS9I+Dfdb28="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestPerformanceBehavior-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestPerformanceBehavior-2.html",
+          "hash": "sFYYaAOTTgnJ8SDTD3+bY58mHuEjdbi23rPU2i/czB0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestValidationBehavior-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Behaviors.RequestValidationBehavior-2.html",
+          "hash": "m3nU4zVEdAVQO6DqMYBW8ZJLR/nNwJs7ndajVKGdFBs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Behaviors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Behaviors.html",
+          "hash": "QAlmjaqKqxJhRy30vuAe8oktqXe9sUilKiLidPtlOEo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Exceptions.BadRequestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Exceptions.BadRequestException.html",
+          "hash": "4bEsb+MahulBKN+Xa5uO93NpsMIehWnYk+m8X3wAjyY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Exceptions.NotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Exceptions.NotFoundException.html",
+          "hash": "ZOVobDjuzNfLcR3WRjaGlHlpffCwpjmtmr/vblS1WJ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Exceptions.UnauthorizedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Exceptions.UnauthorizedException.html",
+          "hash": "xtBQ0puT/m9MCSVuO2l4c4arh07dqASFSm++HcwAqZs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Exceptions.ValidationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Exceptions.ValidationException.html",
+          "hash": "JzmnOkRwL0qdGoyHB52UtTzBQXzsTdzT04C5MXgB3RY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Exceptions.html",
+          "hash": "m3JuCISoGFT5bhWscWMoFFE8Fs/zijnaXukDR9nLeO0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.DirectoryResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.DirectoryResult.html",
+          "hash": "OMDI46Re6PqgR/Y4mPdl264w3Tj2fWUmLQSjHL8I+TA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.FileResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.FileResult.html",
+          "hash": "OMwK3P9MQwtRSjtruKoo2I/jsVVPmDcryjMjoCSYzc8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IAuthorizer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IAuthorizer-1.html",
+          "hash": "rAtPafOSLixURsLxndpAaWkcSIM5o4GbNM3YxGV5ACI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.ICurrentUserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.ICurrentUserService.html",
+          "hash": "euhik+YcVACtuCY16nlLBX5wABaezCLo5l5e8YX0Wk8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IDocRouterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IDocRouterContext.html",
+          "hash": "cwPop8TmoO58X0mupI267CEhyG9+nKS4QD6KyJSX4HA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IFileStorageService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IFileStorageService.html",
+          "hash": "0CrroHHBscuVa5rKaMmdtjOroMfVZjTNNKrJWCLALdQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.INotificationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.INotificationService.html",
+          "hash": "EcL7Vc9QcuVOATSq0yS+MCx2sRdRgoGDTNDdq4pBN5A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IUserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.IUserService.html",
+          "hash": "J0dnNYMQNkpAWZOA7dNWTJ2n40F96lgRy6F/uantPU0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Interfaces.html",
+          "hash": "CxkcGVxmKNoG7g04J2xALho0HsiSeyYTSQWcdbiHEvU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Mappings.IMapFrom-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Mappings.IMapFrom-1.html",
+          "hash": "N8/zJ7Qb7/xgrbVahHELW+BpTtdkiY3YIryUXAAxw4o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Mappings.MappingProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Mappings.MappingProfile.html",
+          "hash": "9J6v4wjBIIJKDZw62ZcvUUs9Mx1MhD7KzI+Is+ZsEnM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Mappings.html",
+          "hash": "i0MN6090SjG+uNfqXogzGhvhXz2J9L5X1MqCZmoBkbQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.AddAuthorizers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.AddAuthorizers.html",
+          "hash": "qxrGWoZmsYQDjLzs1Rw71mZ7A+8MDUNTT1r1eZRSO1Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.Authorization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.Authorization.html",
+          "hash": "mEuHtnI1jvq0vb53cKml5wSDwJ1SeiIOo0OP7HAuYbQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.AuthorizationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.AuthorizationResult.html",
+          "hash": "jLs9CHWMLGPmb4P1j5uLsHWrnQYJ+cF5GhS+Lme7Hmc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.Directory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.Directory.html",
+          "hash": "TSUrLz6BN1Nu9qWyPTvsGX/VFSMtS7eIZIaRyhRXW14="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.DirectoryUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.DirectoryUser.html",
+          "hash": "1ayKBHv8iqxVT19Frggo34D6lH9CW5OG+EEQzs7lSLU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.FileSubmissionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.FileSubmissionDto.html",
+          "hash": "2KdW598ef3zb1jy3ovzYuHXPJUxlxGmfxkk7h3BHacA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.MessageDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.MessageDto.html",
+          "hash": "YsnpSI4+m/k81jZLkJwcmEeQuyqg2Ute2GUE5TQYJRk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.PagingInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.PagingInfo.html",
+          "hash": "2sihLM2dVjKWaEnzNaVtgrG1uw8gCQ6267Z3s9t91c4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.Result.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.Result.html",
+          "hash": "z7RWIcOe6E+oKooNHIV79FF98nDWGd6tLmhnv+e42Cg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Common.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Common.Models.html",
+          "hash": "lwrQb7GPMfgB8+JZK3g5KpwseRVgxlj0ynpesF+fKfU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.DependencyInjection.html",
+          "hash": "mOSAd+z7PRPRRLrVhwOsP6d5XPe8zl0sxdNGWTn2SVQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.ApproveTransactionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.ApproveTransactionCommandHandler.html",
+          "hash": "0BlYNAAe9ywlzQFF3FscpXpRHwKWT5xdxcEyZZMyRVM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.ApproveTransactionCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.ApproveTransactionCommandValidator.html",
+          "hash": "SsakAgXHaOdbj/KBwy5S2R3CqALO4HuUKvaiwz6xhJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.TransactionApproved.TransactionApprovedHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.TransactionApproved.TransactionApprovedHandler.html",
+          "hash": "XuEKMx5LaKBWgaZUbMYhUU3XBgB1SoGRKfXChLXRP/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.TransactionApproved.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.TransactionApproved.html",
+          "hash": "sfQYBrzruPdw/f3rP0AY4Y1EcY173eKv87aiCzrjSeI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.ApproveTransaction.html",
+          "hash": "lIb5LdzAcBdhCzEDixILaetPv4tHofywqdMmeoW7fCQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.CompleteTransactionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.CompleteTransactionCommandHandler.html",
+          "hash": "CNEPrZ1/kEWwdJ83xX6GkFY/wlnj+0JtuD6+p+xx3/Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.CompleteTransactionCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.CompleteTransactionCommandValidator.html",
+          "hash": "qk3MqeW3rgamvM9vHJpZPSrZIOGnOnhFuwPca4apDp4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.TransactionCompleted.TransactionCompletedHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.TransactionCompleted.TransactionCompletedHandler.html",
+          "hash": "9zUzCklsHp3uyt/4FEA375VqkadsUZ1pP71Cl3/QiVk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.TransactionCompleted.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.TransactionCompleted.html",
+          "hash": "ZHFRwiqRM/QTuqhK9U6dvU2fmZVSOnGlV6kPCB7PcUs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CompleteTransaction.html",
+          "hash": "4qwRfomxYYKiQy5u3Q1hgkKVDK54JX1utBMs+cHUqJU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.CreateSubmissionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.CreateSubmissionCommand.html",
+          "hash": "4AUDKlF+EXqsDqsvQM0IJCmR31NUlnDrlKw9laY/dYc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.CreateSubmissionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.CreateSubmissionCommandHandler.html",
+          "hash": "kQvkjVTI9H5eRIqQTBC4RLJ9fv1zSBPaJFdzQgk+GIo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.CreateSubmissionCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.CreateSubmissionCommandValidator.html",
+          "hash": "RHu5U32U3QGK7M8TR9h9waRxS2ORgMWM8DKAOEsQT30="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.SubmissionCreated.SubmissionCreatedHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.SubmissionCreated.SubmissionCreatedHandler.html",
+          "hash": "CTvC2S10ZNkIEVoQm01GCMcd1ZRiVuKKhjw7S2hzaf4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.SubmissionCreated.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.SubmissionCreated.html",
+          "hash": "cTh/fJ2QhQjJDC8Vr5AcCuIeCXr2rj/qsW+YkiJYSLE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.CreateSubmission.html",
+          "hash": "HD6YnYVJl3i5X8vOA//OXwWIzs+CVJ69sHCtXXJjTYc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.DeleteSubmission.DeleteSubmissionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.DeleteSubmission.DeleteSubmissionCommand.html",
+          "hash": "VboT5Nsiyk+cutnXtJa2NzMoJ1Et+lW8jZzZTwv0DpU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.DeleteSubmission.DeleteSubmissionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.DeleteSubmission.DeleteSubmissionCommandHandler.html",
+          "hash": "haOPWH01cmLWrz8z15m7ohxbHmmjlYMg31hvaWBquq0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.DeleteSubmission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.DeleteSubmission.html",
+          "hash": "MXyktWCualyOq9f+AD80l4C5Pw64IIHt+qE6iqyIkVA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.EditSubmission.EditSubmissionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.EditSubmission.EditSubmissionCommandHandler.html",
+          "hash": "Wf3pa2UZXypSjFYNtbnzV1452dZlMefdQjYTvS0tnjo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.EditSubmission.EditSubmissionCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.EditSubmission.EditSubmissionCommandValidator.html",
+          "hash": "FuLj7Hzl5ejyBm394eJq8/Ap7M10fE+615yi52829Y8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.EditSubmission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.EditSubmission.html",
+          "hash": "pBP1A7gMguowH4A3svaccRCEL8RuR5kcZUHtDc+ktj4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.RejectTransactionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.RejectTransactionCommandHandler.html",
+          "hash": "+xKsZDHq9OGsOAoF7OgIWA/2LKgwkakYr79Ssg+azJc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.RejectTransactionCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.RejectTransactionCommandValidator.html",
+          "hash": "v4xoaq45Xcu7b8PGtmNC6mGoyxZFBjDgPiEP9MOEDW4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.TransactionRejected.TransactionRejectedHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.TransactionRejected.TransactionRejectedHandler.html",
+          "hash": "8DJ1Rjai9KuktpyfyqctASmQ2YYgLA/LY1V5IrH3Pqs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.TransactionRejected.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.TransactionRejected.html",
+          "hash": "ZuS+6us3oLkJ6JKUyCKiHMWRv3qPAkxF081kEyMh6UY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Commands.RejectTransaction.html",
+          "hash": "dyblwiU+1oQjZzBqq93Df0ORrjzAMfWCJR+mdU8KY5M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.GetAllSubmissionsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.GetAllSubmissionsQuery.html",
+          "hash": "ej1AXOQ4qaa/eQ9926sKFSaWD/6d194sHqs0H/wOgnQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.GetAllSubmissionsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.GetAllSubmissionsQueryHandler.html",
+          "hash": "JzlwNZNWIGZrZGWCKkESDaHMPUXLzXlWddCP4oaHabk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.GetSubmissionListQueryValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.GetSubmissionListQueryValidator.html",
+          "hash": "hu3Puh1lDQMt1eUPT8qqYd9rkMnQxTSi8cgflEdUx2k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.SubmissionListSubmissionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.SubmissionListSubmissionDto.html",
+          "hash": "wXl7d3CL4CCPh79jxEPbwaNnnEcy8/mo2ksh1tqq1KI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.SubmissionListVm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.SubmissionListVm.html",
+          "hash": "fVgVAwxp3Yreh632NPuTZqIpx6ZD7iLeqs7RkwA67eo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetAllSubmissions.html",
+          "hash": "i4HNKOdMxaeYxlHakuOF4Mizdbwkcxx/iM91dYjCkws="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.ApproveTransactionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.ApproveTransactionCommand.html",
+          "hash": "fM+QkPwFPZF8SSIdXWTOJNOW+uOqMupHOIAg6xGX0/s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.GetApproveTransactionDetailQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.GetApproveTransactionDetailQuery.html",
+          "hash": "sOUPEMExb89hZyFG+2PTgrrBQX6MqsMI9m7dD99dLJ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.GetApproveTransactionDetailQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.GetApproveTransactionDetailQueryHandler.html",
+          "hash": "8Fx3wz37+U1fFXF2qcR/oyNOUjUL45dHpUN05Dr3uXQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetApproveTransactionDetail.html",
+          "hash": "hNyHbKVItLBtVjZPeIkqehB4xbDVdNWExxU4xrW2qfc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCombinedFile.GetCombinedFileQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCombinedFile.GetCombinedFileQuery.html",
+          "hash": "4D9yYFrQxKNAMsVND0MICkWbHnnNSNPLc3SqSFJa54Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCombinedFile.GetCombinedFileQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCombinedFile.GetCombinedFileQueryHandler.html",
+          "hash": "7iiO9hzh0cmN05baUumLl3jDVP+Tnve98grLVm0Pv4k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCombinedFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCombinedFile.html",
+          "hash": "b5keu4crycW9giE8FG4M4k9lsJ0jyVU8SCz84Na4i88="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.CompleteTransactionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.CompleteTransactionCommand.html",
+          "hash": "j6nN2nnBHRItH1RJQ7CRPq0wIpEQWKXrjUzOQb13M8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.GetCompleteTransactionDetailQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.GetCompleteTransactionDetailQuery.html",
+          "hash": "kYuC4i1dHg+3q/SaXO5OqchRKFHoW592/4X4g0uAqIk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.GetCompleteTransactionDetailQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.GetCompleteTransactionDetailQueryHandler.html",
+          "hash": "79qOA/QPG4cBuSC/CpndHV1cVel5vkqVCTriG5uMaOg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetCompleteTransactionDetail.html",
+          "hash": "HPUTcII3sst6Sm4ZR9MHeOYiBDo1H/r4w4CUMlXc2xg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail.GetDeleteSubmissionDetailQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail.GetDeleteSubmissionDetailQuery.html",
+          "hash": "j5zkTnWmW4I6XLQtruMwBe0RxG5iurl8HvvCEYmB3X8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail.GetDeleteSubmissionDetailQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail.GetDeleteSubmissionDetailQueryHandler.html",
+          "hash": "eRD5GQQpo7rNCT8tYx9hFIIYs1t9S1+Z02M2Zqpf8oA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetDeleteSubmissionDetail.html",
+          "hash": "RWslWzFCqvr4alWBgq06ccdRD5Nh0wxakfQpJ42+uZA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.EditSubmissionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.EditSubmissionCommand.html",
+          "hash": "UHFA1UXO5EB5GhhvMX6N90RSzEzoUpwPrtLZEDiAoMw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.GetEditSubmissionDetailQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.GetEditSubmissionDetailQuery.html",
+          "hash": "HUHoZMKjKX6PWb7BeIWP+1Gch/YE5X8zKDcj3jrqr2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.GetEditSubmissionDetailQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.GetEditSubmissionDetailQueryHandler.html",
+          "hash": "cCcZRhQryVPlFPqNgByJ9z7UFOcfPnvs7pUSeBDdaxI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetEditSubmissionDetail.html",
+          "hash": "Zm4QwYy5vivCVplUR2wJYbU20c8pgULpTKpQnjIvVLo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetFile.GetFileQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetFile.GetFileQuery.html",
+          "hash": "xR39WyTV7vp8q6XnUWA7llLEAktlSnioHlPi+/IoQ8A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetFile.GetFileQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetFile.GetFileQueryHandler.html",
+          "hash": "whNHaY2/gAWnCKwTLJA/w71FrEujb6NaPiWvQAeRR/E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetFile.html",
+          "hash": "hTzWBAiZwBoJTbG5Xw8Or8e9PsUBJ8CMTc8lehflvCA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.GetRejectTransactionDetailQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.GetRejectTransactionDetailQuery.html",
+          "hash": "T2Nf58Ut84isufAlGUclKriMEmAhqKHBmRIrM80D3IQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.GetRejectTransactionDetailQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.GetRejectTransactionDetailQueryHandler.html",
+          "hash": "xEAqcCEIi4DThmSfHWNccoPWlbXP/z1UqvHLWXWZ+8s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.RejectTransactionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.RejectTransactionCommand.html",
+          "hash": "tAHRXzQwtPXLlaw2RsFDGEzRe0s/8AZck62jAULx800="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetRejectTransactionDetail.html",
+          "hash": "eZkXgBWKKrsVQt7qcySefU0co8DX4LWDciO8/+o6eVI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionDetail.GetSubmissionDetailQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionDetail.GetSubmissionDetailQuery.html",
+          "hash": "0GO0zlS4u4A7MFaxJeu4I21BM25y+HHO2BBLUzZq+ts="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionDetail.GetSubmissionDetailQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionDetail.GetSubmissionDetailQueryHandler.html",
+          "hash": "xyBOJcahc6gkuXttp6Rt63GMRVAGqDsPr4tHJAB8NqA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionDetail.html",
+          "hash": "lrnB1ABH059AfrOrxSLIkyR1DCzU+KXTKo5F/tWhsxs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionUsers.GetSubmissionUsersQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionUsers.GetSubmissionUsersQuery.html",
+          "hash": "jOqguJc1whvINYQQDuGTP78L2k9SsaNWyXm3VFeysgo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionUsers.GetSubmissionUsersQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionUsers.GetSubmissionUsersQueryHandler.html",
+          "hash": "TkUoe47CggAVVPSuotA6TN2esBnH9VldEpkWMycmv68="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionUsers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetSubmissionUsers.html",
+          "hash": "3eoiZYbEUjvPrWdiNiA75msxYjczgaPfSLBud9dO/DQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.GetUserSubmissionsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.GetUserSubmissionsQuery.html",
+          "hash": "X/AXkPtiEpDV6os8t2zEmvfhO6DSplENENyadhaUUQ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.GetUserSubmissionsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.GetUserSubmissionsQueryHandler.html",
+          "hash": "VMBhSi7cicfyPhPZeAnwSkL4Js2ouRIx/3dS3IFBtBY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.GetUserSubmissionsQueryValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.GetUserSubmissionsQueryValidator.html",
+          "hash": "OcLqlCZkMZWI5PAyzNTTB9RcfMbWuWrvRPsudDsfLHU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.UserSubmissionListSubmissionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.UserSubmissionListSubmissionDto.html",
+          "hash": "v4e2xD/kjcgAtbea1hc+NNN16kTVUcAgh+0UHfqu/4Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.UserSubmissionListVm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.UserSubmissionListVm.html",
+          "hash": "Digsf5bWkiyQgTk7kx/CB5S4yf3ZqXuUwcmnEQ3Vxrg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.Queries.GetUserSubmissions.html",
+          "hash": "aLW6Ap3IXFDSLYMyoPVLgNqTfkYX8M5uONVuLbIVnCw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.SubmissionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.SubmissionDto.html",
+          "hash": "9CIjEWPxzN0kr4ol/hwFb/dR+LMtuxaZ7kG8YKn4Rp8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.SubmissionItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.SubmissionItemDto.html",
+          "hash": "UcGk1iTgB2Lp64nytU+w2NsCsRDVB3qVvyZhyql8UwY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.SubmissionTransactionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.SubmissionTransactionDto.html",
+          "hash": "tRwJDFQan57KSi57Y+utxtCYm0kllG5C9AcPtFyCZio="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Submissions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Submissions.html",
+          "hash": "ejtt2CVlLmkHZWYuMSPDK0ixgbucARm9FnPC/t2520k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.ADUserListVm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.ADUserListVm.html",
+          "hash": "ebioP7w0HUyP1JiPRwL2ouv1U00kvHqBKyTfR8dOup0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.GetADUserListQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.GetADUserListQuery.html",
+          "hash": "tpKTloaEmTRMOBgIuxcT+WggwHRa3j/clzJdakTKe8I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.GetADUserListQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.GetADUserListQueryHandler.html",
+          "hash": "4VcxSlpFFHQ0uG4h3VaeSZ/8tAKmgxN3MlY4RxLgB6o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetADUserList.html",
+          "hash": "M2Xi8LyT2d2CIHKxjrGmJvT4nwPR8ggBdgAnSVzrzgM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.GetUserDirectoryListQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.GetUserDirectoryListQuery.html",
+          "hash": "2YIdh+0x7EweUHeRzXLwsSRrzFSlVRgWREcang0XYnE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.GetUserDirectoryListQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.GetUserDirectoryListQueryHandler.html",
+          "hash": "fFY12sLCPb/qfhLQFo4Oy1PmovpXvLONw72zVIEs9r8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.UserDirectoryListVm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.UserDirectoryListVm.html",
+          "hash": "KkIcJXXownoCtqp26xWjYOmiOXTAz+flTPZTnrxMCbQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserDirectories.html",
+          "hash": "Dz92pJZ662h28RWLu6PaYiwyVT3rVBXI/O7uLQczrLs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.GetUserInfoQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.GetUserInfoQuery.html",
+          "hash": "gx2qEdDckq81K0xXJzbtiJLLIUDHZkfr1opOdr8skBc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.GetUserInfoQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.GetUserInfoQueryHandler.html",
+          "hash": "vKkhSUHp0alX0rQxx+YQ1IpinZvFuPtRasKohyvmh64="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.UserInfoVm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.UserInfoVm.html",
+          "hash": "hZFT152FK3bJzYsCPy5a6eHfeQvT2dApUCtQb5QT7k0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.Users.Queries.GetUserInfo.html",
+          "hash": "A7GcWJXXg5DbPyxGa2C+VOodq9vN3EsPm8ofSkzsTwk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Application/DocRouter.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/DocRouter.Application.html",
+          "hash": "CLYr8PQn3Li0spbKfj/nDvft/CZdXkKGTsP9r9+OMz8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/Application/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/index.html",
+          "hash": "LhXvOny8fnr/Ics5AWMklO8w0gjo4ulY0iihy3339Zg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/Application/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Application/toc.html",
+          "hash": "gXEVqFV+7d2ID78V0o612y/s7Nz7MBol3y/3tvGHrx8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Common/DocRouter.Common.Enums.TransactionStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/DocRouter.Common.Enums.TransactionStatus.html",
+          "hash": "Tk0PQgSjtfRWtWqWlgoWbGBcrBgg2THi0ESQ/BjF/y8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Common/DocRouter.Common.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/DocRouter.Common.Enums.html",
+          "hash": "/hWRMsphg7WOe7ccnxr0FM91CHNNMP8M3GEMxhd7jik="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Common/DocRouter.Common.Extensions.EnumExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/DocRouter.Common.Extensions.EnumExtensions.html",
+          "hash": "BwJmGd9I2SgLguxsTA60WDzxjJNyOw5bNLLHfYzbjHY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Common/DocRouter.Common.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/DocRouter.Common.Extensions.html",
+          "hash": "RcdS9RDRVuW5CX7xOaQ1JaQBuhwB/AJsJ07a6GqGiyc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Common/DocRouter.Common.IDateTime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/DocRouter.Common.IDateTime.html",
+          "hash": "qKcXryV39xfurTEh73iqDCFW14vpfJAS9GZxSGYMo6s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Common/DocRouter.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/DocRouter.Common.html",
+          "hash": "UfjYUP3NVAETslCpBy/7D7Y/J4m6bOglGFxWxLsV2/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/Common/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/index.html",
+          "hash": "1NNvcODnBdZNc03vPXoN6CPD8GNwE82tDHqhJZikkvE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/Common/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Common/toc.html",
+          "hash": "SQrmKiL7ve71QVWRNAiLl/Ju5EB82BxMP1YzHArCwlM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Common.BaseEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Common.BaseEntity.html",
+          "hash": "bd+8330EfhstX5ecF247sJlDrDITffhsXKSf2lgHYLg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Common.html",
+          "hash": "9FC5yufHYTC+4CUc1rasXyHHS7fxh0d3Cw1o1OntT4c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Entities.Submission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Entities.Submission.html",
+          "hash": "NEuZawhemckZ+F6ZeIxhfUjy/2BFlO6JCrZu6BFMwlc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Entities.SubmissionItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Entities.SubmissionItem.html",
+          "hash": "kVadFmdBWbqc0fWYy+y2egezDPHVBwdswqR9DWZsgXw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Entities.SubmissionTransaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Entities.SubmissionTransaction.html",
+          "hash": "5/8VFCGZAx4b+2re+pNyV20PIOM9tekzGE1APMuS2oE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Entities.html",
+          "hash": "he75LX+ZC+7KKinByYkcYn7EnTfgM/7ftpwFWTCl2dk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.BaseEntityArgumentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.BaseEntityArgumentException.html",
+          "hash": "2UAhpQ6uLzyP1pHoHgVj/1jvnJF/94dwegOub5tcWLI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionArgumentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionArgumentException.html",
+          "hash": "p71lrh5tIIrndSNoj26y06ZoWdaxVH/TShe/v0Mezx4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionItem.SubmissionItemArgumentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionItem.SubmissionItemArgumentException.html",
+          "hash": "h9TWme1vwfJy91VVrYiy6FS8tmtg97+9Yyuxdcte1J4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionItem.html",
+          "hash": "0Ic8nZ+fS9sNKjHvFjCMw0yAY0o5Tvu03y+O2CFbU7c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionTransaction.SubmissionTransactionArgumentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionTransaction.SubmissionTransactionArgumentException.html",
+          "hash": "Bwl0uumAKMQ2QRXUnETfZQTnmwP9djrFRT1LAshow0s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionTransaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.SubmissionTransaction.html",
+          "hash": "ICSL2FwwAacVnF+3q4yHiebqte2XBc25Dsx/7G+KmCk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.Entities.html",
+          "hash": "t84+dISAwYal0m1rwKqv0DQ3fi+icnhz/lBj9/XdQY4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Domain/DocRouter.Domain.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/DocRouter.Domain.Exceptions.html",
+          "hash": "w10WFi64DKzfmD6JOeaj61DShy9lwJilYwzB+nRhUis="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/Domain/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/index.html",
+          "hash": "ZtgKroO65vIN0QHahEQQN8dZkPVOjCMbvffrx8Bu0Pw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/Domain/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Domain/toc.html",
+          "hash": "VieULB9bVnGDtAxsQ/150B6cxrrRlzk7ImnEky2+1Hs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADDrive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADDrive.html",
+          "hash": "I5YjbA8Ulni1z41uq4VJk+Qq1pd/ygsZYJWJQiCPYX4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADDriveList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADDriveList.html",
+          "hash": "yADFrDmKvPcwmhnz86dKsv1G3lMBWPFcfOwAeZc5T04="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADFileStorageService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADFileStorageService.html",
+          "hash": "Csd2RCYT5fXzaObYI9TqqMEVEDUy9HQQLIueF+Zx/jU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADSettings.html",
+          "hash": "HqdYAhsCDJ15eI9zNZfyeTeihzs9VBTFwSpXuNHXmr4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADUserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.AzureADUserService.html",
+          "hash": "rcWWn6zhcxrctkhK8AN4eNLLyWxtyc4/dS8triITUJk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.Azure.html",
+          "hash": "v/np9Uhz0LK+m/yjMeEyjaAvfgta+lQbMGzExZv6jFk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.DependencyInjection.html",
+          "hash": "xU6j7NepCJmpXa2xL63af5i199D7/iuqJHj2y19QGxk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.EmailSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.EmailSettings.html",
+          "hash": "aqcvHfjxjDVhotR/xiR1RhIr9u+vffYLSIovet2rJAI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.MachineDateTime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.MachineDateTime.html",
+          "hash": "PWlyMWPgzeXTgJT4xsLinNj5i+odsFdiF14CDtR1Q0E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.NotificationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.NotificationService.html",
+          "hash": "pjcAP/vPvmHR+OUm2Mh/cbigO8kF/wkz8K1XhV5YlvY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Infrastructure/DocRouter.Infrastructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/DocRouter.Infrastructure.html",
+          "hash": "wj5bx8NUHUSufrHDB6yD5wvQfGX10nXW2TMrhwN6qrY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/Infrastructure/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/index.html",
+          "hash": "VBEl5e8dd5UWpY6FWs/T+A//Lj8GRb+mf7VrKLPyF0M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/Infrastructure/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Infrastructure/toc.html",
+          "hash": "J0Vn19zyKB92DBJNKnhoz50kD3pgDroOORYWC2cJueg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Configurations.BaseEntityConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Configurations.BaseEntityConfiguration-1.html",
+          "hash": "t/NxvIn+8lcJu28oozVxKV4sFQ0ES5wKtEn4KzS0lpI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Configurations.SubmissionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Configurations.SubmissionConfiguration.html",
+          "hash": "kNmB6GlNr4DA/ly8AXoqvNNmAP3xIOVzsCIOQi7ojs8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Configurations.SubmissionItemConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Configurations.SubmissionItemConfiguration.html",
+          "hash": "BSfr9mlRsRFtQgJTgeWS8d/ubRLS0mpknwcYod63e+c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Configurations.SubmissionTransactionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Configurations.SubmissionTransactionConfiguration.html",
+          "hash": "faVrm3mo4xD30WYwaMrjx04MNRvM2POtJsx4RVNx0jY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Configurations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Configurations.html",
+          "hash": "wPzVNUWoE9HE3HJGUnMn57YMMF4Y5sqnLr2v+iK0RKI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.DependencyInjection.html",
+          "hash": "/srY8PvVWl1V4I5xEpbkBEHRxVK264DBYcVOGq8grG4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.DocRouterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.DocRouterContext.html",
+          "hash": "S19Py5uvwcvqZ7qZBg1xwNqhT46vbqyQNVTUIB0VFek="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.DocRouterContextFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.DocRouterContextFactory.html",
+          "hash": "7lQ/h1weGtVSNaGDBRmKnqX8AIazW9hugZ7eHDK6LM4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.DocRouterContextFactoryBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.DocRouterContextFactoryBase-1.html",
+          "hash": "qCHi+cMrCCoNHCF8k0Ux+i3DCYHRrgQghxjaDDwcC0o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Migrations.addDriveIdToSubmission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Migrations.addDriveIdToSubmission.html",
+          "hash": "dBxkhVWvN5E0wtitgCgIke0gh1emtqux5iHOKKsZtgA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Migrations.addDriveIds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Migrations.addDriveIds.html",
+          "hash": "4gz+ytXUBAY0ZfIz2wfZdqzTBKnsIzDmAABgSLRC35Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Migrations.addFolderIdToSubmission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Migrations.addFolderIdToSubmission.html",
+          "hash": "HAlrqQyHE7gsjmIsfHQLkHQ1YhndrEesELwE6hCm9Ac="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Migrations.initial.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Migrations.initial.html",
+          "hash": "fNV0m3zTHJXjN+JMFDEsz9DDJpCt0ihPoi0YVuPOYlo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Migrations.moreFields.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Migrations.moreFields.html",
+          "hash": "ir4UEmxb576LRgTnvTCZrekBI1JdTlhqLjH3WIzbFw4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Migrations.submissionDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Migrations.submissionDescription.html",
+          "hash": "TNoo2HoVNGzHC3Kn6vuEoB6WFOn4xTGeJsBWI2K9cKg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.Migrations.html",
+          "hash": "wR/RePIseTa2bi4NgLCqoW3aKTgx6tREiMrI8b3sGlw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Persistence/DocRouter.Persistence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/DocRouter.Persistence.html",
+          "hash": "EzSVGkamzbWW3CClrc/kuroNVmPhufFgTfMbS9i8W0U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/Persistence/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/index.html",
+          "hash": "osylJNVsmPEah7jd4vxUHpyrs0YaWD0qkPJpWl0/O94="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/Persistence/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Persistence/toc.html",
+          "hash": "4aZpDJ9zetRp7NvaG4T4DirURqX2fDCTmzBXOPvBY7E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Common.CustomExceptionHandlerMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Common.CustomExceptionHandlerMiddleware.html",
+          "hash": "O6Y63uWOXO4T11ZljiG8Ila6f6mvvL9iA708mY2KUN8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Common.CustomExceptionHandlerMiddlewareExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Common.CustomExceptionHandlerMiddlewareExtensions.html",
+          "hash": "4IVqO729BThqrOwm+0C8rJEUrQ6jjfVgKUQ1CeKyZdE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Common.html",
+          "hash": "pLcH21YoWOtpBAYFuBJdOlaLW804VanSy1M3B6oIo0o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Controllers.BaseController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Controllers.BaseController.html",
+          "hash": "nYRxitORgKxPy3ik00aLeXwYOUfF1WGbZilBoKiCr30="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Controllers.HomeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Controllers.HomeController.html",
+          "hash": "LsamTOUy7O38w/Tm+b6g3skaufHF1Y7v0DMeyBW6qjQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Controllers.SubmissionController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Controllers.SubmissionController.html",
+          "hash": "G0a0als9KKoQSsLK59/mLpZxsTJKB3H7T/rofXMYCwc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Controllers.html",
+          "hash": "NBiWSEO/ro6zEbj8OQqA1yB/Dx5bXiWZM1UPDcppsLQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Models.ErrorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Models.ErrorViewModel.html",
+          "hash": "lYR4BGgHTqI+KnMEMOf4UVHGpot4Ic07LrcDHyQaB7s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Models.SubmissionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Models.SubmissionViewModel.html",
+          "hash": "Co16idVHlZ4BfvQn9qG6o1CQdEiS6lSUJMBSHPt6EU4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Models.Validators.SubmissionViewModelValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Models.Validators.SubmissionViewModelValidator.html",
+          "hash": "jYA5a+9xgeHwYU4nFythohbK/7SwwwQpZnZAKHlE/5Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Models.Validators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Models.Validators.html",
+          "hash": "5DAb7y1WWgzHddTo414R97fQwyD4af/hWDRSnywVS30="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Models.html",
+          "hash": "+oLVQRUN9NmJPUjkSnAfQf1IxMy7/kkD4yt7A1mecbs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Program.html",
+          "hash": "SSiuCH2h9tg1pvK56NF0SdGZU+oFcuexVIKNBT26dos="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Services.ClaimsLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Services.ClaimsLoader.html",
+          "hash": "OU+xQ+H6xi2frLSvXqCA6Eqjz6WdQmp/OHVpd3TxWO8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Services.CurrentUserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Services.CurrentUserService.html",
+          "hash": "PMDqhwBdalXdY/OVG+IaFm1lVX4Ax+GIg/PuFoQOHGM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Services.html",
+          "hash": "tVyVpk259KlkjSGJ6/VwJMFigC4pvtUp1UGj9NP2IdI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.Startup.html",
+          "hash": "5HTL5bB/ZfkJpjCojfisZw+JMBM9KOrf9NYnQP04eIk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.TagHelpers.AvailableListsTagHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.TagHelpers.AvailableListsTagHelper.html",
+          "hash": "77FwasnXw3E4wL5dvwqWpYBEEzjmcpExQbsIvX0bEao="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.TagHelpers.PageLinkTagHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.TagHelpers.PageLinkTagHelper.html",
+          "hash": "OuyJrSlz2COVKhj1Jw6yRH5W3HOQX+KEnQhwqIebdPs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.TagHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.TagHelpers.html",
+          "hash": "syl2W7iTX5bJw2EdV0FO7HOE4cjZ3vNww3ZmiRp/oRM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserDriveListViewComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserDriveListViewComponent.html",
+          "hash": "G6nr8UkorRLOuOVAzFydVJiHNSwoBOOIUE2XOWY/0qU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserDriveListViewComponentVm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserDriveListViewComponentVm.html",
+          "hash": "DFjQ/1v4U6ewPWQfFM2TkTluT16kUKd040BOJ3Brldg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserInfoViewComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserInfoViewComponent.html",
+          "hash": "BGRkqWoj74uohrB5lM5eDzh7TVczZnSXL8xtHuGe2zg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserListViewComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserListViewComponent.html",
+          "hash": "O7gxGoMq4AG54pgD9Q/ap8XeWbx9tmDW0HC6xSulv9I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserListVm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserListVm.html",
+          "hash": "8cjHAE9/farTq4vbHk6fNijB+DFweGRAQ4MAv6Mf7H0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserSubmissionListViewComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.UserSubmissionListViewComponent.html",
+          "hash": "I41i71KNbmy4k+g68XQb/CnewIcnIvhBtD5z2OW9ZoE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.ViewComponents.html",
+          "hash": "FdBLfymXS5MelprsSZOLxux9e2lzgaCX0fscTvkjjso="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WebUI/DocRouter.WebUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/DocRouter.WebUI.html",
+          "hash": "0F/tPU2I7kmve9PYrr2p2XfV2xMZdo9WS79F06RFuKc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/WebUI/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/index.html",
+          "hash": "DBawNpnwWohgHnKGVSHvOkbAXoVl/ig/TRkGT4pJ+iU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/WebUI/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebUI/toc.html",
+          "hash": "s9sZrOBwgR0IoE3twGDI92IVd7ZMJ8Jz+TH1PUaimuE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "6+7AwHM6n8kGJ1yfyzssqR1+jru1Ljz5qag5A+Qw7zE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "kt1HMBnbSC/c0szuZXDh6vzjL2ipnIa4tWIoQIGfLe0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "RWXAEWkUdGayCpQk1brH4hXBpk2AVY4GzPv5VsrXDK0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "faq/frequently_asked_questions.md",
+      "output": {
+        ".html": {
+          "relative_path": "faq/frequently_asked_questions.html",
+          "hash": "lzU3VltsI+IuMls1w2cawYyi1ST59I4c9pJTrTNHn/U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "faq/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "faq/toc.html",
+          "hash": "ZbgtmGnFzrDYq5oHhdx4vplsowhb8n4p803H4+HDsAk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "help/definitions.md",
+      "output": {
+        ".html": {
+          "relative_path": "help/definitions.html",
+          "hash": "t1G0kRWaudzADmUt9eBd3HjLoQVFSpdcuCCgDSHf4gU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "help/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "help/index.html",
+          "hash": "E3LE0wkm99XpPjm+3l4IGslAB4PdYrHAzzLIjwCSpbI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "help/logging_on.md",
+      "output": {
+        ".html": {
+          "relative_path": "help/logging_on.html",
+          "hash": "ZqRqs/FyS+2E7FzFt/dfk/wefu11iibOIgcReo5WBFY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "help/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "help/toc.html",
+          "hash": "9Wshq7I9SakRRJ7i4AmdsvTS1ycNuhk0v+WWckXucAU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "ywoIVDDESpdQhF5HHdW7qGvq2WJVWhMXbm/eZEKYjfc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "6decvecxpX2bizErnmxC7vrDbn7g8DtnEnJGLVb7OJc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 13,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 196,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
